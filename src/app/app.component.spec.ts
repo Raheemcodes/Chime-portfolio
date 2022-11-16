@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'chimeXD-ssr'`, () => {
+  it(`should have as title 'chimeXD'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('chimeXD-ssr');
+    expect(app.title).toEqual('chimeXD');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('chimeXD-ssr app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('chimeXD app is running!');
   });
 });
