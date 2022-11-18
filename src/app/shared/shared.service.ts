@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
+import { of, delay } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { Card, MetaInterface } from './shared.mdel';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(
+    private meta: Meta,
+    private titleService: Title,
+    private router: Router
+  ) {}
 
   setMeta({ title, description, img, path, keywords }: MetaInterface) {
     this.titleService.setTitle(title);
@@ -50,6 +56,14 @@ export class SharedService {
       property: 'og:image',
       content: environment.frontendAddress + '/assets/background/' + img,
     });
+  }
+
+  navigate(page: string) {
+    return of('navigate')
+      .pipe(delay(300))
+      .subscribe(() => {
+        this.router.navigate([page]);
+      });
   }
 
   lazyLoading() {

@@ -1,0 +1,150 @@
+@import "./../shared/shared";
+
+:host {
+  width: 100%;
+  @include column-centered();
+}
+
+.container {
+  width: 100%;
+  padding: toRem(24) toRem(16) toRem(30);
+  @include column-centered();
+  gap: toRem(24);
+
+  @media screen and (min-width: toRem(541)) {
+    padding: toRem(48) toRem(16) toRem(87);
+    max-width: toRem(996);
+    gap: toRem(48);
+  }
+  @media screen and (min-width: $lg) {
+    padding: toRem(48) toRem(80) toRem(87);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(80);
+    padding: toRem(80) toRem(100) toRem(100);
+  }
+}
+
+.underline {
+  width: 100%;
+  height: toRem(1);
+  background-color: var(--black-30);
+  margin: toRem(62) 0 0;
+}
+
+.title {
+  font-size: toRem(14);
+  font-weight: 500;
+  line-height: 1.71;
+  color: var(--black-90);
+
+  @media screen and (min-width: toRem(541)) {
+    font-size: toRem(24);
+    line-height: 1;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(24);
+    line-height: 1;
+  }
+}
+
+.sub-title {
+  text-align: center;
+  font-size: toRem(32);
+  font-weight: bold;
+  line-height: 1.19;
+
+  @media screen and (min-width: toRem(541)) {
+    font-size: toRem(48);
+    line-height: 1.21;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(64);
+    line-height: 1.19;
+  }
+}
+
+p {
+  text-align: center;
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: 1.5;
+
+  @media screen and (min-width: toRem(541)) {
+    font-size: toRem(24);
+    line-height: 1.58;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(32);
+    line-height: 1.19;
+  }
+}
+
+.cta {
+  font-size: toRem(16);
+  font-weight: bold;
+  line-height: 1.5;
+  color: var(--black-100);
+  padding: toRem(12) toRem(24);
+  border-radius: toRem(8);
+  align-self: center;
+  background-color: var(--main-blue);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-30);
+    }
+  }
+  @media screen and (min-width: $md) {
+    padding: toRem(16) toRem(32);
+    width: auto;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(16) toRem(48);
+  }
+}
+
+footer {
+  @include display-flex();
+  gap: toRem(32);
+
+  @media screen and (min-width: toRem(541)) {
+    gap: toRem(48);
+  }
+
+  .img-cover {
+    @include transition(transform, 200ms);
+    flex-shrink: 0;
+    width: toRem(40);
+    aspect-ratio: 1/1;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    @media screen and (min-width: toRem(541)) {
+      width: toRem(48);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.copy-right {
+  font-size: toRem(11);
+  font-weight: 500;
+  line-height: 2.18;
+
+  @media screen and (min-width: toRem(541)) {
+    font-size: toRem(20);
+    line-height: 1.2;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(24);
+    line-height: 1;
+  }
+}

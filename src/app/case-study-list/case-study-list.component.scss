@@ -1,0 +1,194 @@
+@import "./../shared/shared";
+
+:host {
+  width: 100%;
+}
+
+.case-study__list {
+  @include column-flex();
+  width: 100%;
+  list-style: none;
+  gap: toRem(94);
+
+  @media screen and (min-width: $md) {
+    gap: toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(128);
+  }
+}
+
+.case-study {
+  @include column-flex();
+  width: 100%;
+
+  @media screen and (min-width: $md) {
+    flex-direction: row-reverse;
+    @include between();
+    gap: toRem(24);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(48);
+  }
+}
+
+.img-cover {
+  width: 100%;
+  align-self: center;
+  aspect-ratio: 343/210;
+  border-radius: toRem(8);
+  overflow: hidden;
+
+  @media screen and (min-width: $md) {
+    border-radius: toRem(12);
+    max-width: toRem(554);
+  }
+  @media screen and (min-width: $two-xl) {
+    border-radius: toRem(18);
+    width: floor(82100/1728) * 1%;
+    max-width: toRem(821);
+  }
+  @media screen and (min-width: $three-xl) {
+    max-width: toRem(821);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.content {
+  width: 100%;
+  @include column-flex();
+  gap: toRem(16);
+
+  @media screen and (min-width: $md) {
+    width: auto;
+    gap: toRem(24);
+    flex-shrink: 0;
+  }
+  @media screen and (min-width: $three-xl) {
+    gap: toRem(32);
+  }
+}
+
+.case-study__title {
+  padding-top: toRem(16);
+  font-size: toRem(24);
+  font-weight: bold;
+  line-height: 1.58;
+
+  @media screen and (min-width: $xl) {
+    font-size: toRem(34);
+    line-height: 2.24;
+  }
+  @media screen and (min-width: $three-xl) {
+    font-size: toRem(52);
+    line-height: 1.46;
+  }
+}
+
+.case-study__content {
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: 1.5;
+
+  @media screen and (min-width: $md) {
+    width: floor(45700/1194) * 1vw;
+    max-width: toRem(461);
+  }
+  @media screen and (min-width: $xl) {
+    font-size: toRem(20);
+    line-height: 1.9;
+  }
+  @media screen and (min-width: $three-xl) {
+    font-size: toRem(26);
+    line-height: 1.46;
+    width: floor(65200/1728) * 1vw;
+    max-width: toRem(660);
+  }
+}
+
+.area-list {
+  list-style: none;
+  @include display-flex();
+  flex-wrap: wrap;
+  gap: toRem(16);
+
+  @media screen and (min-width: $three-xl) {
+    gap: toRem(24);
+  }
+}
+
+.area {
+  font-size: toRem(10);
+  font-weight: 400;
+  color: var(--black-70);
+  padding: toRem(12) toRem(24);
+  border-radius: toRem(24);
+  background-color: var(--black-30);
+  flex-shrink: 0;
+
+  @media screen and (min-width: $xl) {
+    font-size: toRem(14);
+  }
+
+  @media screen and (min-width: $three-xl) {
+    font-size: toRem(18);
+  }
+}
+
+.action {
+  @include column-flex();
+  gap: toRem(24);
+  align-self: flex-start;
+  color: var(--main-color);
+
+  @media screen and (min-width: $xl) {
+    gap: toRem(32);
+  }
+  @media screen and (min-width: $xl) {
+    gap: toRem(42);
+  }
+
+  span {
+    font-size: toRem(16);
+    font-weight: 500;
+    line-height: 1.5;
+
+    @media screen and (min-width: $xl) {
+      font-size: toRem(24);
+      line-height: 1;
+    }
+    @media screen and (min-width: $three-xl) {
+      font-size: toRem(28);
+      line-height: 0.86;
+    }
+  }
+
+  .border-bottom {
+    position: relative;
+    width: 100%;
+    height: toRem(5);
+    background-color: var(--black-100);
+
+    &::before {
+      width: 100%;
+      height: toRem(0);
+      background-color: var(--black-100);
+      position: absolute;
+      bottom: toRem(8);
+      content: "";
+      @include transition(height, 200ms);
+    }
+  }
+  @media (hover: hover) {
+    &:hover,
+    &:active {
+      .border-bottom::before {
+        height: toRem(16);
+      }
+    }
+  }
+}

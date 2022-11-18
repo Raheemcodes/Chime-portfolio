@@ -32,7 +32,11 @@
     }
     @media (hover: hover) {
       &:hover {
-        transform: scale(1.2);
+        color: var(--black-70);
+
+        span {
+          color: var(--blue-30);
+        }
       }
     }
 
@@ -159,6 +163,11 @@
   @media screen and (min-width: $lg) {
     display: block;
   }
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-30);
+    }
+  }
 }
 
 // mobile style
@@ -203,6 +212,12 @@
 
         &.active {
           color: var(--main-blue);
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            color: var(--blue-30);
+          }
         }
       }
     }

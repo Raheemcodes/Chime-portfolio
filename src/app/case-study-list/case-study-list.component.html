@@ -1,0 +1,30 @@
+<ul class="case-study__list">
+  <li class="case-study" *ngFor="let caseStudy of caseStudyList">
+    <div class="img-cover" [style]="'background-color:' + caseStudy.background">
+      <img
+        [src]="caseStudy.img"
+        alt
+        width="343"
+        height="210"
+        loading="lazy"
+        [style]="'background-color:' + caseStudy.background"
+      />
+    </div>
+
+    <div class="content">
+      <h3 class="case-study__title">{{ caseStudy.title }}</h3>
+      <p class="case-study__content">
+        {{ caseStudy.desc }}
+      </p>
+      <ul class="area-list">
+        <li class="area" *ngFor="let area of caseStudy.areas">{{ area }}</li>
+      </ul>
+
+      <a [href]="caseStudy.link" class="action">
+        <span>View Case Study</span>
+
+        <div class="border-bottom"></div>
+      </a>
+    </div>
+  </li>
+</ul>

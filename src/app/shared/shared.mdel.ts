@@ -8,3 +8,12 @@ export interface Card {
   img: string;
   path: string;
 }
+
+export interface CaseStudy {
+  title: string;
+  img: string;
+  desc: string;
+  areas: string[];
+  link: string;
+  background: string;
+}

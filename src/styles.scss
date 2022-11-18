@@ -141,3 +141,15 @@ main {
     padding-top: toRem(104);
   }
 }
+
+.click-background {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin-top: -1rem;
+  margin-left: -1rem;
+  border-radius: 50%;
+  background-color: rgba(2, 2, 2, 0.5);
+  transition: all 0.5s ease-out;
+  opacity: 1;
+}

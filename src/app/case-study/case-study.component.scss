@@ -1,0 +1,93 @@
+@import "./../shared/shared";
+
+#case-study {
+  width: 100%;
+  padding: toRem(69) 0 0;
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(104) 0 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(104) 0 0;
+  }
+}
+
+.overview {
+  width: 100%;
+  @include column-centered();
+  gap: toRem(20);
+  padding: toRem(32) toRem(16) toRem(56);
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(64) toRem(80) toRem(150);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    padding: toRem(70) toRem(100) toRem(150);
+  }
+
+  .title {
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.71;
+    color: var(--black-90);
+    text-align: center;
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(20);
+      line-height: 1.2;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(24);
+      line-height: 1;
+    }
+  }
+
+  .sub-title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 0.75;
+    color: var(--black-100);
+    text-align: center;
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(68);
+      line-height: 1.12;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(84);
+      line-height: 0.9;
+    }
+  }
+
+  .desc {
+    font-size: toRem(16);
+    line-height: 1.5;
+    text-align: center;
+    max-width: toRem(342);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(24);
+      font-weight: 500;
+      line-height: 1.67;
+      max-width: toRem(697);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      line-height: 1.25;
+      max-width: toRem(876);
+    }
+  }
+}
+
+.case-study__sect {
+  width: 100%;
+  padding: 0 toRem(16);
+
+  @media screen and (min-width: $lg) {
+    padding: 0 toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(100);
+  }
+}

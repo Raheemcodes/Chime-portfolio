@@ -9,7 +9,9 @@
         <div class="status-circle"></div>
         <div class="status">Availiable for selected projects</div>
       </div>
-      <button class="cta">Hire me</button>
+      <a appClick href="mailto:Ekpenduchimezie1@gmail.com" class="cta">
+        Hire me
+      </a>
 
       <app-response></app-response>
     </div>
@@ -43,8 +45,22 @@
       </div>
 
       <div class="btn-container">
-        <button class="blue">Start a Project</button>
-        <button class="white">Learn more</button>
+        <a
+          class="start-project"
+          href="https://j3en9uepgkn.typeform.com/to/Oy68WS29"
+          target="_blank"
+          appClick
+          class="blue"
+          >Start a Project</a
+        >
+        <button
+          aria-label="Learn More Button"
+          appClick
+          class="white"
+          (click)="sharedService.navigate('more')"
+        >
+          Learn more
+        </button>
       </div>
     </div>
 
@@ -57,6 +73,7 @@
           understanding their entire journeys.
         </div>
       </li>
+
       <li class="process">
         <div class="num">02</div>
         <h3 class="title">UI/UX Design</h3>
@@ -65,6 +82,7 @@
           and the business.
         </div>
       </li>
+
       <li class="process">
         <div class="num">03</div>
         <h3 class="title">Design Systems</h3>
@@ -75,4 +93,33 @@
       </li>
     </ul>
   </section>
+
+  <div class="underline"></div>
+
+  <section class="featured">
+    <h2 class="title">Featured Projects</h2>
+
+    <app-case-study-list [caseStudyList]="caseStudyList"></app-case-study-list>
+  </section>
+
+  <button
+    aria-label="case study button"
+    appClick
+    class="blue view-case__study-btn"
+    (click)="sharedService.navigate('case-study')"
+  >
+    <span>View all Case Studies</span>
+
+    <span>
+      <img
+        loading="lazy"
+        width="24"
+        height="24"
+        src="./../../assets/icons/right-arrow.png"
+        alt
+      />
+    </span>
+  </button>
+
+  <app-footer></app-footer>
 </main>

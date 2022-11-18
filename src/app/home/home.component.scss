@@ -1,13 +1,13 @@
 @import "./../shared/shared";
 
 #home {
-  padding: toRem(69) 0;
+  padding: toRem(69) 0 0;
 
   @media screen and (min-width: $lg) {
-    padding: toRem(104) 0;
+    padding: toRem(104) 0 0;
   }
   @media screen and (min-width: $two-xl) {
-    padding: toRem(104) 0;
+    padding: toRem(104) 0 0;
   }
 }
 
@@ -109,14 +109,21 @@
 }
 
 .cta {
+  display: inline-block;
   padding: toRem(12) toRem(24);
   border-radius: toRem(8);
-  background-color: #3341ff;
+  background-color: var(--main-blue);
   font-size: toRem(16);
   font-weight: bold;
   line-height: 1.5;
   color: var(--black-100);
   margin: toRem(32) 0;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-30);
+    }
+  }
 
   @media screen and (min-width: $md) {
     margin: toRem(32) 0 toRem(48);
@@ -131,6 +138,7 @@
 .intro-bg-img {
   width: 100%;
   margin: toRem(24) 0 toRem(56);
+  background-color: var(--main-black);
 
   @media screen and (min-width: $md) {
     margin: toRem(64) 0 0;
@@ -142,6 +150,7 @@
   }
 
   img {
+    background-color: var(--main-black);
     width: 100%;
     height: auto;
   }
@@ -209,7 +218,7 @@
   .process-title {
     font-size: toRem(40);
     font-weight: bold;
-    line-height: 0.6;
+    line-height: 1;
     color: var(--black-100);
 
     @media screen and (min-width: $xl) {
@@ -254,31 +263,8 @@
       gap: toRem(85);
     }
 
-    button {
-      width: 100%;
-      font-size: toRem(16);
-      font-weight: bold;
-      line-height: 1.5;
-      color: var(--black-100);
-      padding: toRem(12) toRem(24);
-      border-radius: toRem(8);
-      align-self: center;
-
-      @media screen and (min-width: $md) {
-        padding: toRem(16) toRem(32);
-        width: auto;
-      }
-      @media screen and (min-width: $two-xl) {
-        padding: toRem(16) toRem(48);
-      }
-
-      &.blue {
-        background-color: var(--main-blue);
-      }
-      &.white {
-        background-color: var(--black-100);
-        color: var(--main-blue);
-      }
+    .start-project {
+      @include centered();
     }
   }
 
@@ -290,7 +276,10 @@
 
     @media screen and (min-width: $sm) {
       flex-direction: row;
-      // flex-wrap: wrap;
+      @include between();
+      gap: toRem(32);
+    }
+    @media screen and (min-width: $lg) {
       gap: toRem(52);
     }
 
@@ -298,7 +287,10 @@
       width: 100%;
 
       @media screen and (min-width: $sm) {
-        // width: floor($num);
+        min-width: toRem(150);
+      }
+      @media screen and (min-width: $xl) {
+        max-width: toRem(419);
       }
     }
 
@@ -307,6 +299,15 @@
       font-weight: bold;
       line-height: 1;
       color: var(--black-80);
+
+      @media screen and (min-width: $xl) {
+        font-size: toRem(104);
+        line-height: 0.73;
+      }
+      @media screen and (min-width: $two-xl) {
+        font-size: toRem(128);
+        line-height: 0.59;
+      }
     }
 
     .title {
@@ -315,6 +316,16 @@
       line-height: 1.33;
       color: var(--black-100);
       margin: toRem(16) 0;
+
+      @media screen and (min-width: $xl) {
+        font-size: toRem(40);
+        line-height: 1.9;
+        margin: toRem(24) 0;
+      }
+      @media screen and (min-width: $two-xl) {
+        font-size: toRem(56);
+        line-height: 1.36;
+      }
     }
 
     .process-content {
@@ -322,6 +333,114 @@
       font-weight: 500;
       line-height: 1.5;
       color: var(--black-100);
+
+      @media screen and (min-width: $xl) {
+        font-size: toRem(20);
+        line-height: 2;
+      }
+      @media screen and (min-width: $two-xl) {
+        font-size: toRem(28);
+        line-height: 1.43;
+      }
     }
+  }
+}
+
+.underline {
+  width: 100%;
+  height: toRem(1);
+  background-color: var(--black-30);
+  margin: toRem(62) 0 toRem(32);
+
+  @media screen and (min-width: $xl) {
+    margin: toRem(62) 0 toRem(64);
+  }
+}
+
+.featured {
+  width: 100%;
+  padding: 0 toRem(16);
+
+  @media screen and (min-width: $lg) {
+    padding: 0 toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(100);
+  }
+
+  .title {
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.71;
+    margin-bottom: toRem(39);
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(20);
+      line-height: 1.2;
+      margin-bottom: toRem(102);
+    }
+    @media screen and (min-width: $xl) {
+      font-size: toRem(24);
+      line-height: 1;
+      margin-bottom: toRem(128);
+    }
+  }
+}
+
+.blue,
+.white,
+.view-case__study-btn {
+  @include centered();
+  width: 100%;
+  font-size: toRem(16);
+  font-weight: bold;
+  line-height: 1.5;
+  color: var(--black-100);
+  padding: toRem(12) toRem(24);
+  border-radius: toRem(8);
+  align-self: center;
+
+  @media screen and (min-width: $md) {
+    padding: toRem(16) toRem(32);
+    width: auto;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(16) toRem(48);
+  }
+}
+
+.blue {
+  background-color: var(--main-blue);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-30);
+    }
+  }
+}
+
+.white {
+  background-color: var(--black-100);
+  color: var(--main-blue);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--black-90);
+      color: var(--blue-30);
+    }
+  }
+}
+
+.view-case__study-btn {
+  width: auto;
+  @include centered();
+  margin: toRem(69) auto 0;
+
+  @media screen and (min-width: $md) {
+    margin: toRem(128) auto 0;
+    gap: toRem(8);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(16);
   }
 }
