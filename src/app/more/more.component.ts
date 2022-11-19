@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./more.component.scss'],
 })
 export class MoreComponent implements OnInit {
-  intent: string = encodeURIComponent('Hello @__sinofgluttony');
+  intent: string = encodeURIComponent('Hello!');
 
   constructor() {}
 
