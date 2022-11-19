@@ -6,9 +6,9 @@ import {
   HostListener,
   Inject,
   Input,
+  OnDestroy,
   OnInit,
   Renderer2,
-  OnDestroy,
 } from '@angular/core';
 
 @Directive({
