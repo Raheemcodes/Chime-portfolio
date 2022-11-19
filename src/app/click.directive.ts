@@ -73,7 +73,7 @@ export class ClickDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(this.clickElement, 'margin-top', '-1rem');
     this.renderer.setStyle(this.clickElement, 'margin-left', '-1rem');
     this.renderer.setStyle(this.clickElement, 'border-radius', '50%');
-    console.log(this._opacity);
+
     this.renderer.setStyle(
       this.clickElement,
       'background-color',

@@ -134,6 +134,7 @@ footer {
   font-size: toRem(11);
   font-weight: 500;
   line-height: 2.18;
+  text-align: center;
 
   @media screen and (min-width: $md) {
     font-size: toRem(20);

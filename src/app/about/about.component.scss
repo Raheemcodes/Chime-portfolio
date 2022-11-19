@@ -226,6 +226,7 @@ footer {
     font-size: toRem(16);
     line-height: 2.38;
     margin-bottom: toRem(48);
+    text-align: center;
 
     @media screen and (min-width: $lg) {
       font-size: toRem(32);
@@ -291,6 +292,7 @@ footer {
   font-weight: 500;
   line-height: 2.18;
   margin-bottom: toRem(40);
+  text-align: center;
 
   @media screen and (min-width: $lg) {
     font-size: toRem(20);
