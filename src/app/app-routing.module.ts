@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'more',
     loadChildren: () => import('./more/more.module').then((m) => m.MoreModule),
   },
+  {
+    path: '**',
+    redirectTo: '/',
+  },
 ];
 
 @NgModule({

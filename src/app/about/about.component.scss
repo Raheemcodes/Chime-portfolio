@@ -1,0 +1,112 @@
+@import "./../shared/shared";
+
+#about {
+  width: 100%;
+  padding: toRem(69) 0 0;
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(104) 0 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(104) 0 0;
+  }
+}
+
+.overview {
+  width: 100%;
+  @include column-centered();
+  gap: toRem(32);
+  padding: toRem(32) toRem(16) toRem(56);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(40);
+    padding: toRem(64) toRem(80) toRem(55);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(64);
+    padding: toRem(70) toRem(100) toRem(128);
+  }
+
+  .content {
+    width: 100%;
+    @include column-centered();
+    gap: toRem(20);
+
+    @media screen and (min-width: $two-xl) {
+      gap: toRem(28);
+    }
+  }
+
+  .title {
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.71;
+    color: var(--black-90);
+    text-align: center;
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(20);
+      line-height: 1.2;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(24);
+      line-height: 1;
+    }
+  }
+
+  .sub-title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 0.75;
+    color: var(--black-100);
+    text-align: center;
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(68);
+      line-height: 1.12;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(84);
+      line-height: 0.9;
+    }
+  }
+
+  .desc {
+    font-size: toRem(16);
+    line-height: 1.5;
+    text-align: center;
+    max-width: toRem(342);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(24);
+      font-weight: 500;
+      line-height: 1.67;
+      max-width: toRem(697);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      line-height: 1.25;
+      max-width: toRem(876);
+    }
+  }
+}
+
+.cta {
+  font-size: toRem(16);
+  font-weight: bold;
+  line-height: 1.5;
+  color: var(--black-100);
+  padding: toRem(12) toRem(24);
+  border-radius: toRem(8);
+  align-self: center;
+  background-color: var(--main-blue);
+  @include fade-hover(opacity, 300ms, 0.7);
+
+  @media screen and (min-width: $md) {
+    padding: toRem(16) toRem(32);
+    width: auto;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(16) toRem(48);
+  }
+}
