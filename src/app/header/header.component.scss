@@ -22,7 +22,6 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    @include transition(transform, 300ms);
 
     @media screen and (min-width: $md) {
       font-size: toRem(28);
@@ -30,15 +29,7 @@
     @media screen and (min-width: $two-xl) {
       font-size: toRem(32);
     }
-    @media (hover: hover) {
-      &:hover {
-        color: var(--black-70);
-
-        span {
-          color: var(--blue-30);
-        }
-      }
-    }
+    @include fade-hover(opacity, 300ms, 0.6);
 
     span {
       color: var(--main-blue);
@@ -105,10 +96,6 @@
     @include display-flex();
     gap: toRem(80 - 16);
 
-    // @media (min-width: $xl) {
-    //   gap: toRem(48 - 16);
-    // }
-
     @media (min-width: $two-xl) {
       gap: toRem(144 - 16);
     }
@@ -125,6 +112,14 @@
 
       @media (min-width: $two-xl) {
         font-size: toRem(24);
+      }
+
+      a {
+        cursor: pointer;
+        font-size: toRem(20);
+        font-weight: 700;
+        line-height: toRem(29);
+        color: var(--black-100);
       }
 
       .border {
@@ -163,11 +158,7 @@
   @media screen and (min-width: $lg) {
     display: block;
   }
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--blue-30);
-    }
-  }
+  @include fade-hover(opacity, 300ms, 0.7);
 }
 
 // mobile style
@@ -200,8 +191,7 @@
       list-style: none;
       gap: toRem(64 - 32);
 
-      .nav-item,
-      a {
+      .nav-item {
         width: 100%;
         cursor: pointer;
         font-weight: 700;
@@ -209,6 +199,15 @@
         line-height: toRem(29);
         padding: toRem(16);
         color: var(--main-color);
+
+        a {
+          width: 100%;
+          cursor: pointer;
+          font-weight: 700;
+          font-size: toRem(32);
+          line-height: toRem(29);
+          color: var(--main-color);
+        }
 
         &.active {
           color: var(--main-blue);

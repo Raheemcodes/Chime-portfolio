@@ -57,6 +57,16 @@
   transition: $property $duration ease-out;
 }
 
+@mixin fade-hover($property, $duration, $opacity) {
+  @media (hover: hover) {
+    @include transition($property, $duration);
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}
+
 @function toRem($value) {
   $remValue: calc($value / 16) + rem;
   @return $remValue;

@@ -118,17 +118,11 @@
   line-height: 1.5;
   color: var(--black-100);
   margin: toRem(32) 0;
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--blue-30);
-    }
-  }
+  @include fade-hover(opacity, 300ms, 0.7);
 
   @media screen and (min-width: $md) {
     margin: toRem(32) 0 toRem(48);
   }
-
   @media screen and (min-width: $two-xl) {
     padding: toRem(16) toRem(32);
     margin: toRem(48) 0 toRem(64);
@@ -407,28 +401,29 @@
   @media screen and (min-width: $two-xl) {
     padding: toRem(16) toRem(48);
   }
+  @include fade-hover(opacity, 300ms, 0.7);
 }
 
 .blue {
   background-color: var(--main-blue);
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--blue-30);
-    }
-  }
+  // @media (hover: hover) {
+  //   &:hover {
+  //     background-color: var(--blue-30);
+  //   }
+  // }
 }
 
 .white {
   background-color: var(--black-100);
   color: var(--main-blue);
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--black-90);
-      color: var(--blue-30);
-    }
-  }
+  // @media (hover: hover) {
+  //   &:hover {
+  //     background-color: var(--black-90);
+  //     color: var(--blue-30);
+  //   }
+  // }
 }
 
 .view-case__study-btn {

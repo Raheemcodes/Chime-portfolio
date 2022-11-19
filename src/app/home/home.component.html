@@ -46,10 +46,10 @@
 
       <div class="btn-container">
         <a
+          appClick
           class="start-project"
           href="https://j3en9uepgkn.typeform.com/to/Oy68WS29"
           target="_blank"
-          appClick
           class="blue"
           >Start a Project</a
         >
@@ -57,7 +57,7 @@
           aria-label="Learn More Button"
           appClick
           class="white"
-          (click)="sharedService.navigate('more')"
+          (click)="sharedService.navigate('/more')"
         >
           Learn more
         </button>
@@ -103,10 +103,10 @@
   </section>
 
   <button
-    aria-label="case study button"
     appClick
+    aria-label="case study button"
     class="blue view-case__study-btn"
-    (click)="sharedService.navigate('case-study')"
+    (click)="sharedService.navigate('/case-study')"
   >
     <span>View all Case Studies</span>
 

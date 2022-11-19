@@ -12,19 +12,26 @@
         <div class="border"></div>
       </li>
       <li class="nav-item">
-        Resume
+        <a
+          href="./../../assets/file/resume.pdf"
+          target="_blank"
+          aria-label="Chime's Resume"
+        >
+          Resume
+        </a>
         <div class="border"></div>
       </li>
     </ul>
   </div>
 
-  <a
+  <button
     appClick
-    href="mailto:Ekpenduchimezie1@gmail.com"
     class="cta"
     aria-label="Contact Me Button"
-    >Contact Me</a
+    (click)="sharedService.navigate('/more')"
   >
+    Contact Me
+  </button>
 
   <button
     class="toggle-btn"
@@ -37,6 +44,7 @@
   </button>
 </header>
 
+<!-- Mobile Navigation -->
 <nav class="mobile-nav" #nav>
   <div class="nav-list__container">
     <ul class="nav-list">
@@ -46,14 +54,22 @@
       <li class="nav-item" routerLink="/about" routerLinkActive="active">
         About
       </li>
-      <a
-        href="./../../assets/file/resume.pdf"
-        target="_blank"
-        aria-label="Chime's Resume"
+      <li class="nav-item">
+        <a
+          href="./../../assets/file/resume.pdf"
+          target="_blank"
+          aria-label="Chime's Resume"
+          >Resume</a
+        >
+      </li>
+      <li
         class="nav-item"
-        >Resume</a
+        aria-label="Contact Me Button"
+        routerLink="/more"
+        routerLinkActive="active"
       >
-      <a href="mailto:Ekpenduchimezie1@gmail.com" class="nav-item">Contact</a>
+        Contact
+      </li>
     </ul>
 
     <footer>

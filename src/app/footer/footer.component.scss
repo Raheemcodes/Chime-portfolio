@@ -89,12 +89,8 @@ p {
   border-radius: toRem(8);
   align-self: center;
   background-color: var(--main-blue);
+  @include fade-hover(opacity, 300ms, 0.7);
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--blue-30);
-    }
-  }
   @media screen and (min-width: $md) {
     padding: toRem(16) toRem(32);
     width: auto;
@@ -139,7 +135,7 @@ footer {
   font-weight: 500;
   line-height: 2.18;
 
-  @media screen and (min-width: toRem(541)) {
+  @media screen and (min-width: $md) {
     font-size: toRem(20);
     line-height: 1.2;
   }

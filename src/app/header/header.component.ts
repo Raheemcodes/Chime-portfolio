@@ -8,8 +8,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { PlatformConfig } from '@angular/platform-server';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { delay } from 'rxjs';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: PlatformConfig,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    public sharedService: SharedService
   ) {
     this.router.events.pipe(delay(200)).subscribe((event) => {
       if (event instanceof NavigationEnd) this.closeNav();

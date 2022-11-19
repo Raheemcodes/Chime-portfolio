@@ -28,9 +28,17 @@ export class ClickDirective implements OnInit {
     @Inject(DOCUMENT) private document: Document
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Block children from intercepting the offset coordinates
 
-  createElement(event: WheelEvent) {
+    Array.from(this.elRef.nativeElement.children).forEach((el) => {
+      const child = el as HTMLElement;
+
+      this.renderer.setStyle(child, 'pointer-events', 'none');
+    });
+  }
+
+  createElement(event: PointerEvent) {
     this.clickElement = this.document.createElement('div');
     this.clickElement.classList.add('click-background');
     this.renderer.setStyle(
@@ -46,7 +54,7 @@ export class ClickDirective implements OnInit {
     this.elRef.nativeElement.appendChild(this.clickElement);
   }
 
-  @HostListener('click', ['$event']) click(event: WheelEvent) {
+  @HostListener('click', ['$event']) click(event: PointerEvent) {
     if (!this.isAnimating) {
       this.isAnimating = true;
 
