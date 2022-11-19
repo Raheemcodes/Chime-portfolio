@@ -4,6 +4,7 @@ import { AboutComponent } from './about.component';
 import { RouterModule } from '@angular/router';
 import { ClickDirective } from '../click.directive';
 import { ResponseModule } from '../response/response.module';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
   declarations: [AboutComponent],
@@ -11,6 +12,7 @@ import { ResponseModule } from '../response/response.module';
     CommonModule,
     ClickDirective,
     ResponseModule,
+    FooterModule,
     RouterModule.forChild([{ path: '', component: AboutComponent }]),
   ],
 })

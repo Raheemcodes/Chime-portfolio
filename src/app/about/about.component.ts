@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  intent: string = encodeURIComponent('Hello @__sinofgluttony');
-
   constructor() {}
 
   ngOnInit(): void {}

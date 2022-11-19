@@ -16,15 +16,18 @@
   width: 100%;
   @include column-centered();
   gap: toRem(32);
-  padding: toRem(32) toRem(16) toRem(56);
+  padding: toRem(32) toRem(16) 0;
+  margin-bottom: toRem(64);
 
   @media screen and (min-width: $lg) {
     gap: toRem(40);
-    padding: toRem(64) toRem(80) toRem(55);
+    padding: toRem(64) toRem(80) 0;
+    margin-bottom: toRem(88);
   }
   @media screen and (min-width: $two-xl) {
     gap: toRem(64);
-    padding: toRem(70) toRem(100) toRem(128);
+    padding: toRem(70) toRem(100) 0;
+    margin-bottom: toRem(128);
   }
 
   .content {
@@ -44,7 +47,7 @@
     color: var(--black-90);
     text-align: center;
 
-    @media screen and (min-width: $lg) {
+    @media screen and (min-width: $md) {
       font-size: toRem(20);
       line-height: 1.2;
     }
@@ -57,62 +60,28 @@
   .sub-title {
     font-size: toRem(32);
     font-weight: bold;
-    line-height: 0.75;
+    line-height: 1.5;
     color: var(--black-100);
     text-align: center;
+    max-width: toRem(285);
 
     @media screen and (min-width: $lg) {
+      max-width: none;
+      width: toRem(636);
       font-size: toRem(68);
-      line-height: 1.12;
+      line-height: 1.47;
     }
     @media screen and (min-width: $two-xl) {
+      width: toRem(774);
       font-size: toRem(84);
-      line-height: 0.9;
-    }
-  }
-
-  .desc {
-    font-size: toRem(16);
-    line-height: 1.5;
-    text-align: center;
-    max-width: toRem(342);
-
-    @media screen and (min-width: $lg) {
-      font-size: toRem(24);
-      font-weight: 500;
-      line-height: 1.67;
-      max-width: toRem(697);
-    }
-    @media screen and (min-width: $two-xl) {
-      font-size: toRem(32);
-      line-height: 1.25;
-      max-width: toRem(876);
+      line-height: 1.19;
     }
   }
 }
 
-.cta {
-  font-size: toRem(16);
-  font-weight: bold;
-  line-height: 1.5;
-  color: var(--black-100);
-  padding: toRem(12) toRem(24);
-  border-radius: toRem(8);
-  align-self: center;
-  background-color: var(--main-blue);
-  @include fade-hover(opacity, 300ms, 0.7);
-
-  @media screen and (min-width: $md) {
-    padding: toRem(16) toRem(32);
-    width: auto;
-  }
-  @media screen and (min-width: $two-xl) {
-    padding: toRem(16) toRem(48);
-  }
-}
-
-.step {
+.about {
   width: 100%;
+  @include column-flex();
   padding: 0 toRem(16);
 
   @media screen and (min-width: $lg) {
@@ -122,121 +91,18 @@
     padding: 0 toRem(100);
   }
 
-  .title {
-    font-size: toRem(32);
-    font-weight: bold;
-    line-height: 1.19;
-    text-align: center;
-    margin-bottom: toRem(64);
-
-    @media screen and (min-width: $md) {
-      font-size: toRem(48);
-      line-height: 1.21;
-      margin-bottom: toRem(80);
-    }
-    @media screen and (min-width: $two-xl) {
-      font-size: toRem(64);
-      line-height: 1.19;
-    }
-  }
-
-  .process-list {
-    width: 100%;
-    list-style: none;
-    @include column-flex();
-    gap: toRem(80);
-    margin-bottom: toRem(32);
-
-    @media screen and (min-width: $lg) {
-      margin-bottom: toRem(60);
-    }
-    @media screen and (min-width: $two-xl) {
-      gap: toRem(128);
-      margin-bottom: toRem(64);
-    }
-  }
-
-  .process {
-    width: 100%;
-  }
-
-  .process-title {
-    font-size: toRem(24);
-    font-weight: bold;
-    line-height: 1;
+  p {
+    font-size: toRem(18);
+    line-height: 1.5;
     margin-bottom: toRem(24);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(34);
-      line-height: 2.24;
+      font-size: toRem(28);
+      margin-bottom: toRem(48);
     }
     @media screen and (min-width: $two-xl) {
-      font-size: toRem(52);
-      line-height: 1.46;
-    }
-  }
-
-  .process-content {
-    font-size: toRem(16);
-    font-weight: 400;
-    line-height: 1.5;
-
-    @media screen and (min-width: $md) {
-      font-size: toRem(24);
-      line-height: 1.58;
-    }
-    @media screen and (min-width: $two-xl) {
-      font-size: toRem(32);
-      line-height: 1.19;
-    }
-
-    span {
-      font-weight: bold;
-    }
-  }
-}
-
-.start-project__btn {
-  display: inline-block;
-  margin-bottom: toRem(32);
-
-  @media screen and (min-width: $lg) {
-    margin-bottom: toRem(64);
-  }
-  @media screen and (min-width: $two-xl) {
-    margin-bottom: toRem(80);
-  }
-}
-
-footer {
-  width: 100%;
-  padding: 0 toRem(16);
-  @include column-centered();
-  margin-top: toRem(64);
-
-  @media screen and (min-width: $lg) {
-    margin-top: toRem(128);
-    padding: 0 toRem(80);
-  }
-  @media screen and (min-width: $two-xl) {
-    padding: 0 toRem(100);
-  }
-
-  .contact {
-    font-size: toRem(16);
-    line-height: 2.38;
-    margin-bottom: toRem(48);
-    text-align: center;
-
-    @media screen and (min-width: $lg) {
-      font-size: toRem(32);
-      line-height: 1.19;
-      margin-bottom: toRem(88);
-    }
-    @media screen and (min-width: $two-xl) {
-      font-size: toRem(48);
-      line-height: 0.79;
-      margin-bottom: toRem(128);
+      font-size: toRem(40);
+      margin-bottom: toRem(64);
     }
 
     a {
@@ -251,56 +117,32 @@ footer {
           opacity: 0.8;
         }
       }
-    }
-  }
-}
 
-.social-media__list {
-  @include display-flex();
-  gap: toRem(32);
-  margin-bottom: toRem(24);
-
-  @media screen and (min-width: $lg) {
-    gap: toRem(48);
-    margin-bottom: toRem(86);
-  }
-
-  .img-cover {
-    @include transition(transform, 200ms);
-    flex-shrink: 0;
-    width: toRem(40);
-    aspect-ratio: 1/1;
-
-    @media (hover: hover) {
-      &:hover {
-        transform: scale(1.2);
+      &.bold {
+        font-weight: bold;
       }
     }
-    @media screen and (min-width: $lg) {
-      width: toRem(48);
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
   }
 }
 
-.copy-right {
-  font-size: toRem(11);
-  font-weight: 500;
-  line-height: 2.18;
-  margin-bottom: toRem(40);
-  text-align: center;
+.cta {
+  font-size: toRem(16);
+  font-weight: bold;
+  line-height: 1.5;
+  color: var(--black-100);
+  padding: toRem(12) toRem(24);
+  border-radius: toRem(8);
+  align-self: flex-start;
+  background-color: var(--main-blue);
+  margin: toRem(8) 0 toRem(32);
+  @include fade-hover(opacity, 300ms, 0.7);
 
-  @media screen and (min-width: $lg) {
-    font-size: toRem(20);
-    line-height: 1.2;
-    margin-bottom: toRem(102);
+  @media screen and (min-width: $md) {
+    margin: 0 0 toRem(80);
+    padding: toRem(16) toRem(32);
+    width: auto;
   }
   @media screen and (min-width: $two-xl) {
-    font-size: toRem(24);
-    line-height: 1;
+    padding: toRem(16) toRem(48);
   }
 }
