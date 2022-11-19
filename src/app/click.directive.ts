@@ -19,11 +19,10 @@ export class ClickDirective implements OnInit, OnDestroy {
   @HostBinding('style.position') position = 'relative';
   @HostBinding('style.overflow') overflow = 'hidden';
 
-  _opacity!: number;
+  _opacity: number = 0.5;
   @Input() appClick: 'dark' | 'light' | '' = 'dark';
   @Input() set opacity(val: number) {
     this._opacity = val || 0.5;
-
     if (val >= 1) this._opacity = 1;
     if (val <= 0) this._opacity = 0;
   }

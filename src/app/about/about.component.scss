@@ -110,3 +110,100 @@
     padding: toRem(16) toRem(48);
   }
 }
+
+.step {
+  width: 100%;
+  padding: 0 toRem(16);
+
+  @media screen and (min-width: $lg) {
+    padding: 0 toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(100);
+  }
+
+  .title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 1.19;
+    text-align: center;
+    margin-bottom: toRem(64);
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(48);
+      line-height: 1.21;
+      margin-bottom: toRem(80);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(64);
+      line-height: 1.19;
+    }
+  }
+
+  .process-list {
+    width: 100%;
+    list-style: none;
+    @include column-flex();
+    gap: toRem(80);
+    margin-bottom: toRem(32);
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: toRem(60);
+    }
+    @media screen and (min-width: $two-xl) {
+      gap: toRem(128);
+      margin-bottom: toRem(64);
+    }
+  }
+
+  .process {
+    width: 100%;
+  }
+
+  .process-title {
+    font-size: toRem(24);
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: toRem(24);
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(34);
+      line-height: 2.24;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(52);
+      line-height: 1.46;
+    }
+  }
+
+  .process-content {
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: 1.5;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(24);
+      line-height: 1.58;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      line-height: 1.19;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.start-project__btn {
+  display: inline-block;
+  margin-bottom: toRem(32);
+
+  @media screen and (min-width: $lg) {
+    margin-bottom: toRem(64);
+  }
+  @media screen and (min-width: $two-xl) {
+    margin-bottom: toRem(80);
+  }
+}
