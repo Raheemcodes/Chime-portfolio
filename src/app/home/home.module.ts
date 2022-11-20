@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CaseStudyListModule } from '../case-study-list/case-study-list.module';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { FooterModule } from '../footer/footer.module';
+import { AnimationDirective } from '../animation.directive';
+import { CaseStudyListModule } from '../case-study-list/case-study-list.module';
 import { ClickDirective } from '../click.directive';
+import { FooterModule } from '../footer/footer.module';
 import { ResponseModule } from '../response/response.module';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -15,6 +16,7 @@ import { ResponseModule } from '../response/response.module';
     FooterModule,
     ResponseModule,
     ClickDirective,
+    AnimationDirective,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
   ],
 })
