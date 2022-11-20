@@ -17,7 +17,7 @@ export class AnimationDirective implements OnInit {
   @Input('aray-easing') easing!: string;
   @Input('aray-offsetX') offsetX!: string;
   @Input('aray-offsetY') offsetY!: string;
-  @Input('aray-opacity') opacity!: string;
+  @Input('aray-opacity') opacity!: number;
 
   constructor(private elRef: ElementRef, private builder: AnimationBuilder) {}
 
@@ -39,7 +39,7 @@ export class AnimationDirective implements OnInit {
   fadeIn(): AnimationMetadata[] {
     return [
       style({
-        opacity: this.opacity || '0',
+        opacity: this.opacity || 0,
         transform: `translate(${this.offsetX || '0'}, ${this.offsetY || '0'})`,
       }),
       animate(
