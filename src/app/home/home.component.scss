@@ -133,10 +133,17 @@
   width: 100%;
   margin: toRem(24) 0 toRem(56);
   background-color: var(--main-black);
+  aspect-ratio: 340/345.5;
 
   @media screen and (min-width: $md) {
     margin: toRem(64) 0 0;
     max-width: toRem(556);
+    aspect-ratio: 835/865;
+  }
+  @media screen and (min-width: $xl) {
+    margin: toRem(64) 0 0;
+    max-width: toRem(556);
+    aspect-ratio: 1152/1193;
   }
   @media screen and (min-width: $two-xl) {
     margin: toRem(70) 0 0;
