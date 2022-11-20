@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ClickDirective } from '../click.directive';
 import { ResponseModule } from '../response/response.module';
 import { FooterModule } from '../footer/footer.module';
+import { AnimationDirective } from '../animation.directive';
 
 @NgModule({
   declarations: [AboutComponent],
@@ -13,6 +14,7 @@ import { FooterModule } from '../footer/footer.module';
     ClickDirective,
     ResponseModule,
     FooterModule,
+    AnimationDirective,
     RouterModule.forChild([{ path: '', component: AboutComponent }]),
   ],
 })

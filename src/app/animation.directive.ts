@@ -4,7 +4,15 @@ import {
   AnimationMetadata,
   style,
 } from '@angular/animations';
-import { Directive, Input, ElementRef, OnInit } from '@angular/core';
+import {
+  Directive,
+  Input,
+  ElementRef,
+  OnInit,
+  HostListener,
+  Renderer2,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 @Directive({
   selector: '[aray-animate]',
@@ -18,11 +26,31 @@ export class AnimationDirective implements OnInit {
   @Input('aray-offsetX') offsetX!: string;
   @Input('aray-offsetY') offsetY!: string;
   @Input('aray-opacity') opacity!: number;
+  hostEl!: HTMLElement;
+  observer!: IntersectionObserver;
 
-  constructor(private elRef: ElementRef, private builder: AnimationBuilder) {}
+  constructor(
+    elRef: ElementRef,
+    private builder: AnimationBuilder,
+    private renderer: Renderer2,
+    private cd: ChangeDetectorRef
+  ) {
+    this.hostEl = elRef.nativeElement;
+
+    if ('IntersectionObserver' in window) this.styleElement();
+  }
 
   ngOnInit(): void {
-    this.trigger();
+    this.onload();
+  }
+
+  styleElement() {
+    this.renderer.setStyle(
+      this.hostEl,
+      'transform',
+      `translate(${this.offsetX || '0'}, ${this.offsetY || '0'})`
+    );
+    this.renderer.setStyle(this.hostEl, 'opacity', this.opacity || 0);
   }
 
   trigger() {
@@ -31,9 +59,12 @@ export class AnimationDirective implements OnInit {
     if (this.arayAnimate == 'fadeIn') animation = this.fadeIn();
 
     const factory = this.builder.build(animation);
-    const player = factory.create(this.elRef.nativeElement);
+    const player = factory.create(this.hostEl);
 
     player.play();
+    this.observer.unobserve(this.hostEl);
+
+    // Unobserve elements above viewport
   }
 
   fadeIn(): AnimationMetadata[] {
@@ -49,5 +80,38 @@ export class AnimationDirective implements OnInit {
         style({ opacity: 1, transform: 'translate(0, 0)' })
       ),
     ];
+  }
+
+  onload() {
+    if ('IntersectionObserver' in window) {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // triggers when animation is in the viewport or enters
+            if (entry.isIntersecting && entry.boundingClientRect.top >= 0) {
+              this.trigger();
+            }
+          });
+        },
+        {
+          threshold: [0.1],
+        }
+      );
+
+      // observe only elments within or below viewport
+      this.observer.observe(this.hostEl);
+
+      // trigger all elements animation above
+      setTimeout(() => {
+        if (this.hostEl.getBoundingClientRect().top < 0) {
+          this.trigger();
+        }
+      }, 1);
+
+      // shorten animation delay of element below viewport
+      if (this.hostEl.getBoundingClientRect().top >= innerHeight) {
+        this.delay = '100ms';
+      }
+    }
   }
 }

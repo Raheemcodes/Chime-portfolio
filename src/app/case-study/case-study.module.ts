@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CaseStudyListModule } from '../case-study-list/case-study-list.module';
 import { FooterModule } from '../footer/footer.module';
 import { ClickDirective } from '../click.directive';
+import { AnimationDirective } from '../animation.directive';
 
 @NgModule({
   declarations: [CaseStudyComponent],
@@ -13,6 +14,7 @@ import { ClickDirective } from '../click.directive';
     CaseStudyListModule,
     FooterModule,
     ClickDirective,
+    AnimationDirective,
     RouterModule.forChild([{ path: '', component: CaseStudyComponent }]),
   ],
 })

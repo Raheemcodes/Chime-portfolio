@@ -141,8 +141,6 @@
     aspect-ratio: 835/865;
   }
   @media screen and (min-width: $xl) {
-    margin: toRem(64) 0 0;
-    max-width: toRem(556);
     aspect-ratio: 1152/1193;
   }
   @media screen and (min-width: $two-xl) {

@@ -1,5 +1,11 @@
 <ul class="case-study__list">
-  <li class="case-study" *ngFor="let caseStudy of caseStudyList">
+  <li
+    class="case-study"
+    aray-animate="fadeIn"
+    aray-duration="500ms"
+    aray-offsetY="20%"
+    *ngFor="let caseStudy of caseStudyList"
+  >
     <div class="img-cover" [style]="'background-color:' + caseStudy.background">
       <img
         [src]="caseStudy.img"
