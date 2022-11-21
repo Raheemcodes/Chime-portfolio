@@ -4,14 +4,7 @@ import {
   AnimationMetadata,
   style,
 } from '@angular/animations';
-import {
-  ChangeDetectorRef,
-  Directive,
-  ElementRef,
-  Input,
-  OnInit,
-  Renderer2,
-} from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[aray-animate]',
@@ -24,15 +17,16 @@ export class AnimationDirective implements OnInit {
   @Input('aray-easing') easing!: string;
   @Input('aray-offsetX') offsetX!: string;
   @Input('aray-offsetY') offsetY!: string;
+  @Input('aray-scale') scale!: number;
   @Input('aray-opacity') opacity!: number;
+
   hostEl!: HTMLElement;
   observer!: IntersectionObserver;
 
   constructor(
     elRef: ElementRef,
     private builder: AnimationBuilder,
-    private renderer: Renderer2,
-    private cd: ChangeDetectorRef
+    private renderer: Renderer2
   ) {
     this.hostEl = elRef.nativeElement;
 
@@ -47,7 +41,9 @@ export class AnimationDirective implements OnInit {
     this.renderer.setStyle(
       this.hostEl,
       'transform',
-      `translate(${this.offsetX || '0'}, ${this.offsetY || '0'})`
+      `translate(${this.offsetX || '0'}, ${this.offsetY || '0'}) scale(${
+        this.scale || 1
+      })`
     );
     this.renderer.setStyle(this.hostEl, 'opacity', this.opacity || 0);
   }
@@ -78,13 +74,15 @@ export class AnimationDirective implements OnInit {
     return [
       style({
         opacity: this.opacity || 0,
-        transform: `translate(${this.offsetX || '0'}, ${this.offsetY || '0'})`,
+        transform: `translate(${this.offsetX || '0'}, ${
+          this.offsetY || '0'
+        }) scale(${this.scale || 1})`,
       }),
       animate(
         `${this.duration || '500ms'} ${this.delay || '100ms'} ${
           this.easing || 'ease-out'
         }`,
-        style({ opacity: 1, transform: 'translate(0, 0)' })
+        style({ opacity: 1, transform: 'translate(0, 0) scale(1)' })
       ),
     ];
   }
