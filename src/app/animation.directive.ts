@@ -4,7 +4,16 @@ import {
   AnimationMetadata,
   style,
 } from '@angular/animations';
-import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Directive,
+  ElementRef,
+  Inject,
+  Input,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[aray-animate]',
@@ -26,7 +35,8 @@ export class AnimationDirective implements OnInit {
   constructor(
     elRef: ElementRef,
     private builder: AnimationBuilder,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
     this.hostEl = elRef.nativeElement;
 
@@ -34,7 +44,7 @@ export class AnimationDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    this.onload();
+    if (isPlatformBrowser(this.platformId)) this.onload();
   }
 
   styleElement() {
