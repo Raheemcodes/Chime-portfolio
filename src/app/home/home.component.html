@@ -67,6 +67,7 @@
           ./../../assets/background/pc/bg-image.png      835w,
           ./../../assets/background/pc/bg-image_lg.png  1152w
         "
+        (error)="$any($event.currentTarget).display = 'none'"
       />
     </div>
   </section>
@@ -203,6 +204,7 @@
         height="24"
         src="./../../assets/icons/right-arrow.png"
         alt
+        (error)="$any($event.currentTarget).display = 'none'"
       />
     </span>
   </button>

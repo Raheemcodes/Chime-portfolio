@@ -31,6 +31,8 @@ export class AnimationDirective implements OnInit {
 
   hostEl!: HTMLElement;
   observer!: IntersectionObserver;
+  timeout: any;
+  intersectionSupport!: boolean;
 
   constructor(
     elRef: ElementRef,
@@ -44,7 +46,16 @@ export class AnimationDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) this.onload();
+    if (isPlatformBrowser(this.platformId)) {
+      this.intersectionSupport =
+        'IntersectionObserver' in window &&
+        'IntersectionObserverEntry' in window &&
+        'intersectionRatio' in window.IntersectionObserverEntry.prototype &&
+        'boundingClientRect' in window.IntersectionObserverEntry.prototype &&
+        'getBoundingClientRect' in document.documentElement;
+
+      this.onload();
+    }
   }
 
   styleElement() {
@@ -69,7 +80,7 @@ export class AnimationDirective implements OnInit {
     // start animation
     player.play();
 
-    if ('IntersectionObserver' in window) {
+    if (this.intersectionSupport) {
       // Unobserve elements above viewport
       this.observer.unobserve(this.hostEl);
     } else {
@@ -78,6 +89,8 @@ export class AnimationDirective implements OnInit {
       window.removeEventListener('resize', this.onscroll);
       window.removeEventListener('orientationChange', this.onscroll);
     }
+
+    clearTimeout(this.timeout);
   }
 
   fadeIn(): AnimationMetadata[] {
@@ -98,10 +111,10 @@ export class AnimationDirective implements OnInit {
   }
 
   onload() {
-    if ('IntersectionObserver' in window) {
+    if (this.intersectionSupport) {
       this.onIntersect();
     } else {
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.onscroll();
         if (this.hostEl.offsetTop - scrollY < 0) this.trigger();
       }, 1);
@@ -110,45 +123,40 @@ export class AnimationDirective implements OnInit {
 
   onIntersect() {
     // Register Host Element to the observer
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // triggers when animation is in the viewport or enters
-          if (entry.isIntersecting && entry.boundingClientRect.top >= 0) {
-            this.trigger();
-          }
-        });
-      },
-      {
-        threshold: [0.1],
-      }
-    );
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // triggers when animation is in the viewport or enters
+        if (entry.isIntersecting && entry.boundingClientRect.top >= 0) {
+          this.trigger();
+        }
+      });
+    });
 
     // observe only elments within or below viewport
     this.observer.observe(this.hostEl);
 
-    // trigger all elements animation above
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
+      // trigger all elements animation above
       if (this.hostEl.getBoundingClientRect().top < 0) {
         this.trigger();
       }
-    }, 1);
 
-    // shorten animation delay of element below viewport
-    if (this.hostEl.getBoundingClientRect().top >= innerHeight) {
-      this.delay = '100ms';
-    }
+      // shorten animation delay of element below viewport
+      if (this.hostEl.getBoundingClientRect().top >= innerHeight) {
+        this.delay = '100ms';
+      }
+    }, 1);
   }
 
   onscroll = () => {
+    const SCROLLED_INTO_VIEW = scrollY + innerHeight;
+    const threshold: number = this.hostEl.clientHeight / 5;
+    const offsetTop = this.hostEl.offsetTop + threshold;
+
     // Add Listeners
     window.addEventListener('scroll', this.onscroll);
     window.addEventListener('resize', this.onscroll);
     window.addEventListener('orientationChange', this.onscroll);
-
-    const SCROLLED_INTO_VIEW = scrollY + innerHeight;
-    const threshold: number = this.hostEl.clientHeight / 5;
-    const offsetTop = this.hostEl.offsetTop + threshold;
 
     // trigger animation if 10%+ element height is within the viewport
     if (offsetTop >= scrollY && offsetTop <= SCROLLED_INTO_VIEW) this.trigger();
