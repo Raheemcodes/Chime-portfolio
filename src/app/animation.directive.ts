@@ -126,9 +126,7 @@ export class AnimationDirective implements OnInit {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         // triggers when animation is in the viewport or enters
-        if (entry.isIntersecting && entry.boundingClientRect.top >= 0) {
-          this.trigger();
-        }
+        if (entry.isIntersecting) this.trigger();
       });
     });
 
