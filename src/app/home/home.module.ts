@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AnimationDirective } from '../animation.directive';
@@ -17,6 +17,7 @@ import { HomeComponent } from './home.component';
     ResponseModule,
     ClickDirective,
     AnimationDirective,
+    NgOptimizedImage,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
   ],
 })

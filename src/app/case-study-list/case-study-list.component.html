@@ -8,11 +8,10 @@
   >
     <div class="img-cover" [style]="'background-color:' + caseStudy.background">
       <img
-        [src]="caseStudy.img"
-        alt="Image"
+        [ngSrc]="caseStudy.img"
+        alt
         width="343"
         height="210"
-        loading="lazy"
         (error)="$any($event.currentTarget).display = 'none'"
       />
     </div>

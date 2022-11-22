@@ -45,7 +45,7 @@
   }
   @media screen and (min-width: $two-xl) {
     border-radius: toRem(18);
-    width: floor(82100/1728) * 1%;
+    width: floor(calc(82100 / 1728)) * 1%;
     max-width: toRem(821);
   }
   @media screen and (min-width: $three-xl) {
@@ -95,7 +95,7 @@
   line-height: 1.5;
 
   @media screen and (min-width: $md) {
-    width: floor(45700/1194) * 1vw;
+    width: floor(calc(45700 / 1194)) * 1vw;
     max-width: toRem(461);
   }
   @media screen and (min-width: $xl) {
@@ -105,7 +105,7 @@
   @media screen and (min-width: $three-xl) {
     font-size: toRem(26);
     line-height: 1.46;
-    width: floor(65200/1728) * 1vw;
+    width: floor(calc(65200 / 1728)) * 1vw;
     max-width: toRem(660);
   }
 }

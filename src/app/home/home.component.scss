@@ -49,7 +49,7 @@
   margin-bottom: toRem(18);
   max-width: toRem(288);
 
-  @media screen and (min-width: $md) {
+  @media screen and (min-width: $lg) {
     font-size: toRem(96);
     line-height: 0.91;
     margin-bottom: toRem(32);
@@ -71,7 +71,7 @@
   max-width: toRem(288);
   margin-bottom: toRem(24);
 
-  @media screen and (min-width: $md) {
+  @media screen and (min-width: $lg) {
     font-size: toRem(24);
     line-height: 1.58;
     max-width: toRem(450);
@@ -101,7 +101,7 @@
     line-height: 1.83;
     color: var(--black-90);
 
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $lg) {
       font-size: toRem(16);
       line-height: 1.5;
     }
@@ -149,7 +149,6 @@
   }
 
   img {
-    background-color: var(--main-black);
     width: 100%;
     height: auto;
   }
@@ -188,7 +187,7 @@
     max-width: toRem(539);
 
     @media screen and (min-width: $md) {
-      width: floor(53900/1194) * 1%;
+      width: floor(calc(53900 / 1194)) * 1%;
     }
     @media screen and (min-width: $xl) {
       gap: toRem(24);
@@ -411,24 +410,11 @@
 
 .blue {
   background-color: var(--main-blue);
-
-  // @media (hover: hover) {
-  //   &:hover {
-  //     background-color: var(--blue-30);
-  //   }
-  // }
 }
 
 .white {
   background-color: var(--black-100);
   color: var(--main-blue);
-
-  // @media (hover: hover) {
-  //   &:hover {
-  //     background-color: var(--black-90);
-  //     color: var(--blue-30);
-  //   }
-  // }
 }
 
 .view-case__study-btn {

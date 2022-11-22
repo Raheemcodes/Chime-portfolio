@@ -56,18 +56,18 @@
       aray-offsetX="10%"
     >
       <img
-        loading="lazy"
-        src="./../../assets/background/pc/bg-image.png"
+        ngSrc="./../../assets/background/pc/bg-image.png"
         alt
-        width="340"
-        height="345.5"
-        sizes="(max-width: 767px) 563px, (max-width: 1279px) 835px, 1152px"
+        width="563"
+        height="633"
+        sizes="100%"
         srcset="
           ./../../assets/background/mobile/bg-image.png  563w,
           ./../../assets/background/pc/bg-image.png      835w,
           ./../../assets/background/pc/bg-image_lg.png  1152w
         "
         (error)="$any($event.currentTarget).display = 'none'"
+        priority
       />
     </div>
   </section>
