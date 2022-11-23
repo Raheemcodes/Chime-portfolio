@@ -99,10 +99,16 @@ export class ClickDirective implements OnInit, OnDestroy {
       this.isAnimating = true;
 
       this.createElement(event);
+
+      // Use greater length of host element for the touch final diameter
+      const width: number = this.elRef.nativeElement.clientWidth;
+      const height: number = this.elRef.nativeElement.clientHeight;
+      const result: number = width > height ? width : height;
+
       this.renderer.setStyle(
         this.clickElement,
         'transform',
-        `scale(${(this.elRef.nativeElement.clientWidth / 32) * 2})`
+        `scale(${(result / 32) * 2})`
       );
       this.renderer.setStyle(this.clickElement, 'opacity', '0');
 

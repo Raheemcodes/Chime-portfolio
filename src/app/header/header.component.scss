@@ -176,13 +176,13 @@
   transition: all 0.3s ease-out;
   padding: toRem(69) 0 toRem(54);
   overflow: auto;
+  @include custom-scrollbar();
 
   .nav-list__container {
     @include column-between();
     width: 100%;
     height: 100%;
     gap: toRem(48);
-    overflow-y: auto;
 
     .nav-list {
       @include column-flex();
