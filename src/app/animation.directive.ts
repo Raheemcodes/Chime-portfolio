@@ -121,23 +121,21 @@ export class AnimationDirective implements OnInit {
           // triggers when animation is in the viewport or enters
           if (entry.isIntersecting) this.trigger();
         });
-      },
-      { threshold: [0.1] }
+      }
+      // { threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
     );
 
-    // observe only elments within or below viewport
-    this.observer.observe(this.hostEl);
-
     this.timeout = setTimeout(() => {
+      const boundingClientRect: DOMRect = this.hostEl.getBoundingClientRect();
+
+      // observe only elments within or below viewport
+      this.observer.observe(this.hostEl);
+
       // trigger all elements animation above viewport
-      if (this.hostEl.getBoundingClientRect().bottom < 0) {
-        this.trigger();
-      }
+      if (boundingClientRect.top < innerHeight) this.trigger();
 
       // shorten animation delay of element below viewport
-      if (this.hostEl.getBoundingClientRect().top >= innerHeight) {
-        this.delay = '100ms';
-      }
+      if (boundingClientRect.top >= innerHeight) this.delay = '100ms';
     }, 1);
   }
 
