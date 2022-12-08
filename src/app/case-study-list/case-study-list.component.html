@@ -6,7 +6,10 @@
     aray-offsetY="20%"
     *ngFor="let caseStudy of caseStudyList"
   >
-    <div class="img-cover" [style]="'background-color:' + caseStudy.background">
+    <div
+      class="img-cover"
+      attr.style="background-color:{{ caseStudy.background }}"
+    >
       <img
         [ngSrc]="caseStudy.img"
         alt

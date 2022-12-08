@@ -207,6 +207,12 @@
           font-size: toRem(32);
           line-height: toRem(29);
           color: var(--main-color);
+
+          @media (hover: hover) {
+            &:hover {
+              color: var(--blue-30);
+            }
+          }
         }
 
         &.active {
