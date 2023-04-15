@@ -1,5 +1,6 @@
 import {
   animate,
+  animateChild,
   AnimationBuilder,
   AnimationMetadata,
   style,
@@ -47,7 +48,12 @@ export class AnimationDirective implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.intersectionSupport = false;
+      this.intersectionSupport =
+        'IntersectionObserver' in window &&
+        'IntersectionObserverEntry' in window &&
+        'intersectionRatio' in window.IntersectionObserverEntry.prototype &&
+        'boundingClientRect' in window.IntersectionObserverEntry.prototype &&
+        'getBoundingClientRect' in document.documentElement;
 
       this.onload();
     }
@@ -102,6 +108,7 @@ export class AnimationDirective implements OnInit {
         }`,
         style({ opacity: 1, transform: 'translate(0, 0) scale(1)' })
       ),
+      animateChild(),
     ];
   }
 
@@ -121,8 +128,8 @@ export class AnimationDirective implements OnInit {
           // triggers when animation is in the viewport or enters
           if (entry.isIntersecting) this.trigger();
         });
-      }
-      // { threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
+      },
+      { threshold: [0.33] }
     );
 
     this.timeout = setTimeout(() => {
@@ -147,7 +154,7 @@ export class AnimationDirective implements OnInit {
 
     this.timeout = setTimeout(() => {
       const SCROLLED_VIEW = scrollY + innerHeight;
-      const threshold: number = this.hostEl.clientHeight / 5;
+      const threshold: number = this.hostEl.clientHeight / 3;
       const offsetTop = this.hostEl.offsetTop + threshold;
 
       // trigger animation if 10%+ element height is within the viewport
