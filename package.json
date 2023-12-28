@@ -10,7 +10,8 @@
     "dev:ssr": "ng run chimeXD-ssr:serve-ssr",
     "serve:ssr": "node dist/chimeXD-ssr/server/main.js",
     "build:ssr": "ng build && ng run chimeXD-ssr:server",
-    "prerender": "ng run chimeXD-ssr:prerender"
+    "prerender": "ng run chimeXD-ssr:prerender",
+    "deploy": "ng build && firebase deploy"
   },
   "private": true,
   "dependencies": {

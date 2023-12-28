@@ -1,0 +1,72 @@
+@import "../shared/shared";
+
+#backdoor {
+  @include column-centered();
+  width: 100%;
+  gap: toRem(64);
+  padding: toRem(69) toRem(16) 0;
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(88);
+    padding: toRem(104) toRem(78) 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(128);
+    padding: toRem(104) toRem(100) 0;
+  }
+}
+
+.overview {
+  @include column-centered();
+  gap: toRem(20);
+  margin-top: toRem(32);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(16);
+    margin-top: toRem(64);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    margin-top: toRem(70);
+  }
+
+  h1.title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 0.75;
+    color: var(--black-100);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(68);
+      line-height: 1.12;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(84);
+      line-height: 0.9;
+    }
+  }
+
+  h3.subtitle {
+    font-size: toRem(16);
+    line-height: 1.5;
+    text-align: center;
+    color: var(--black-70);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(24);
+      font-weight: 500;
+      line-height: 1.67;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      font-weight: normal;
+      line-height: 1.19;
+    }
+  }
+}
+
+.playlist-form__container {
+  background-color: #2e2e2e;
+  padding: toRem(24) toRem(16);
+  border-radius: toRem(6);
+}

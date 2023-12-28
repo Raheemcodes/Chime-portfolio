@@ -1,0 +1,484 @@
+@import "./../shared/shared";
+
+#playlist {
+  width: 100%;
+  padding: toRem(69) 0 0;
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(104) 0 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(104) 0 0;
+  }
+}
+
+.overview {
+  width: 100%;
+  @include column-centered();
+  gap: toRem(20);
+  padding: toRem(32) toRem(16) 0;
+  margin-bottom: toRem(64);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(16);
+    padding: toRem(64) toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    padding: toRem(70) toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+
+  .title {
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.71;
+    color: var(--black-90);
+    text-align: center;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(16);
+      line-height: 1.2;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(24);
+      line-height: 1;
+      color: var(--black-70);
+    }
+  }
+
+  .desc {
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: toRem(24);
+    color: var(--black-90);
+    text-align: center;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(24);
+      line-height: toRem(40);
+      font-weight: 500;
+      max-width: toRem(697);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      font-weight: 400;
+      line-height: toRem(38);
+      color: var(--black-70);
+      max-width: toRem(874);
+    }
+  }
+
+  .sub-title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 1.5;
+    color: var(--black-100);
+    text-align: center;
+    max-width: toRem(285);
+
+    @media screen and (min-width: $lg) {
+      max-width: none;
+      width: toRem(636);
+      font-size: toRem(68);
+      line-height: 1.47;
+    }
+    @media screen and (min-width: $two-xl) {
+      width: toRem(774);
+      font-size: toRem(84);
+      line-height: 1.19;
+    }
+  }
+}
+
+.opinion {
+  width: 100%;
+  @include column-flex();
+  padding: 0 toRem(16);
+
+  @media screen and (min-width: $lg) {
+    padding: 0 toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(100);
+  }
+
+  p {
+    font-size: toRem(18);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: toRem(24);
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(28);
+      margin-bottom: toRem(48);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(40);
+      margin-bottom: toRem(64);
+    }
+  }
+}
+
+.underline {
+  width: 100%;
+  height: toRem(1);
+  background-color: var(--black-30);
+  margin: toRem(24) 0;
+
+  @media screen and (min-width: $md) {
+    margin: toRem(80 - 48) 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    margin: toRem(80 - 48) 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    margin: toRem(95 - 64) 0;
+  }
+}
+
+.top {
+  width: 100%;
+  @include column-centered();
+  gap: toRem(20);
+  padding: toRem(24) toRem(16) 0;
+  margin-bottom: toRem(64);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(16);
+    padding: toRem(64) toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    padding: toRem(70) toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+
+  .title {
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.71;
+    color: var(--black-90);
+    text-align: center;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(16);
+      line-height: 1.2;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(24);
+      line-height: 1;
+      color: var(--black-70);
+    }
+  }
+
+  .sub-title {
+    font-size: toRem(32);
+    font-weight: bold;
+    line-height: 1.5;
+    color: var(--black-100);
+    text-align: center;
+    max-width: toRem(285);
+
+    @media screen and (min-width: $lg) {
+      max-width: none;
+      width: toRem(636);
+      font-size: toRem(68);
+      line-height: 1.47;
+    }
+    @media screen and (min-width: $two-xl) {
+      width: toRem(774);
+      font-size: toRem(84);
+      line-height: 1.19;
+    }
+  }
+
+  .actions {
+    @include centered();
+    gap: toRem(24);
+    padding: toRem(16) toRem(8) 0;
+    width: 100%;
+    max-width: toRem(576);
+
+    @media screen and (min-width: $md) {
+      padding: toRem(48) 0 0;
+      gap: toRem(48);
+    }
+    @media screen and (min-width: $md) {
+      padding: toRem(56) 0 0;
+      gap: toRem(64);
+    }
+
+    .top-music__link {
+      @include centered();
+      width: 45%;
+      gap: toRem(12);
+      font-size: toRem(16);
+      font-weight: 700;
+      line-height: toRem(24);
+      color: var(--main-black);
+      border-radius: toRem(8);
+      background: var(--black-100, #fdfdfe);
+      padding: toRem(12) toRem(24);
+
+      @media screen and (min-width: $md) {
+        font-size: toRem(24);
+        font-weight: 700;
+        line-height: toRem(24);
+        color: var(--main-black, #222);
+        gap: toRem(16);
+        padding: toRem(16) toRem(48);
+      }
+
+      .logo {
+        width: toRem(16);
+        height: toRem(16);
+
+        @media screen and (min-width: $md) {
+          width: toRem(24);
+          height: toRem(24);
+        }
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.playlist-title__desc-container {
+  @include column-flex();
+  width: 100%;
+  gap: toRem(24);
+  padding: 0 toRem(16) 0;
+  margin-bottom: toRem(48);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(32);
+    padding: 0 toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(40);
+    padding: 0 toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+
+  .title {
+    font-size: toRem(24);
+    font-weight: bold;
+    letter-spacing: normal;
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(48);
+      line-height: 1.21;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(64);
+      line-height: 1.19;
+    }
+  }
+
+  .desc {
+    font-size: toRem(18);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(28);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(40);
+    }
+  }
+}
+
+.playlist-container {
+  width: 100%;
+  padding: 0 toRem(16) 0;
+  margin-bottom: toRem(48);
+
+  @media screen and (min-width: $lg) {
+    padding: 0 toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+
+  .btn-actions {
+    @include display-flex();
+    width: 100%;
+    position: relative;
+
+    .active-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      height: 100%;
+      border-radius: toRem(6);
+      background: #2e2e2e;
+      transition: left 0.3s ease-out;
+
+      &.move {
+        left: 50%;
+      }
+    }
+
+    .music-btn {
+      @include centered();
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      font-size: 16px;
+      font-weight: bold;
+      gap: toRem(12);
+      padding: toRem(24);
+      color: var(--main-color);
+      background-color: #0000;
+
+      @media screen and (min-width: $md) {
+        font-size: toRem(32);
+        line-height: 0.75;
+        gap: toRem(24);
+        padding: toRem(44) toRem(24);
+      }
+      @media screen and (min-width: $two-xl) {
+        gap: toRem(22);
+        padding: toRem(50) toRem(24);
+      }
+    }
+
+    .logo {
+      width: toRem(16);
+      height: toRem(16);
+
+      @media screen and (min-width: $md) {
+        width: toRem(24);
+        height: toRem(24);
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+ul.playlist {
+  @include column-flex();
+  list-style: none;
+  padding: toRem(12) 0 0;
+  margin: toRem(39) 0;
+
+  @media screen and (min-width: $md) {
+    padding: toRem(32) 0 0;
+    margin: toRem(56) 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    margin: toRem(75) 0;
+  }
+}
+
+li.play {
+  @include column-flex();
+  gap: toRem(12);
+  padding: toRem(12) toRem(24);
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover,
+    &:active {
+      border-radius: toRem(6);
+      background-color: #2e2e2e;
+    }
+  }
+  @media screen and (min-width: $md) {
+    padding: toRem(28) toRem(32);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(32);
+  }
+
+  .title {
+    font-size: toRem(20);
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .artists-genre {
+    font-size: toRem(14);
+    line-height: 1;
+  }
+}
+
+footer {
+  width: 100%;
+  padding: 0 toRem(16);
+  @include column-centered();
+  margin-top: toRem(24);
+
+  @media screen and (min-width: $lg) {
+    margin-top: toRem(48);
+    padding: 0 toRem(80);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: 0 toRem(80);
+  }
+}
+
+.social-media__list {
+  @include display-flex();
+  gap: toRem(32);
+  margin-bottom: toRem(24);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(48);
+    margin-bottom: toRem(86);
+  }
+
+  .img-cover {
+    @include transition(transform, 200ms);
+    flex-shrink: 0;
+    width: toRem(40);
+    aspect-ratio: 1/1;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    @media screen and (min-width: $lg) {
+      width: toRem(48);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.copy-right {
+  font-size: toRem(11);
+  font-weight: 500;
+  line-height: 2.18;
+  margin-bottom: toRem(40);
+  text-align: center;
+
+  @media screen and (min-width: $lg) {
+    font-size: toRem(20);
+    line-height: 1.2;
+    margin-bottom: toRem(102);
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(24);
+    line-height: 1;
+  }
+}

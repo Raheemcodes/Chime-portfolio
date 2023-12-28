@@ -94,7 +94,11 @@
   .nav-list {
     list-style: none;
     @include display-flex();
-    gap: toRem(80 - 16);
+    gap: toRem(80 - 48);
+
+    @media (min-width: $xl) {
+      gap: toRem(80 - 32);
+    }
 
     @media (min-width: $two-xl) {
       gap: toRem(144 - 16);
@@ -109,6 +113,7 @@
       font-weight: 700;
       line-height: toRem(29);
       color: var(--black-100);
+      flex-shrink: 0;
 
       @media (min-width: $two-xl) {
         font-size: toRem(24);

@@ -21,6 +21,16 @@ const routes: Routes = [
     loadChildren: () => import('./more/more.module').then((m) => m.MoreModule),
   },
   {
+    path: 'playlist',
+    loadChildren: () =>
+      import('./playlist/playlist.module').then((m) => m.PlaylistModule),
+  },
+  {
+    path: 'backdoor',
+    loadChildren: () =>
+      import('./backdoor/backdoor.module').then((m) => m.BackdoorModule),
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
