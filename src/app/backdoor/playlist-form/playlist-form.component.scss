@@ -1,0 +1,78 @@
+@import "../../shared/shared";
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+form {
+  @include column-flex();
+  width: 100%;
+  gap: toRem(14);
+  background-color: var(--main-black);
+  border-radius: toRem(6);
+  padding: toRem(12);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(24);
+    border-radius: toRem(8);
+    padding: toRem(32);
+  }
+}
+
+.title {
+  font-size: toRem(18);
+  font-weight: 500;
+  line-height: 0.89;
+
+  @media screen and (min-width: $lg) {
+    font-size: toRem(32);
+    line-height: 0.91;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(40);
+    line-height: 0.73;
+  }
+}
+
+.control {
+  @include column-flex();
+  gap: toRem(8);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(24);
+  }
+
+  label {
+    font-size: toRem(16);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--black-100);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(20);
+    }
+  }
+
+  input {
+    padding: toRem(16) toRem(12);
+    border-radius: toRem(4);
+    border: solid toRem(1) #a1a1a1;
+    background-color: #292929;
+    caret-color: #a1a1a1;
+    color: var(--black-100);
+    font-size: toRem(16);
+    font-weight: 500;
+    transition: all 0.2s ease-out;
+
+    &:focus {
+      border: solid toRem(2) #a1a1a1;
+    }
+
+    &::placeholder {
+      font-size: toRem(14);
+      font-weight: 400;
+      color: #a1a1a1;
+    }
+  }
+}

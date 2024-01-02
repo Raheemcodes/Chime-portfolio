@@ -4,15 +4,15 @@
   @include column-centered();
   width: 100%;
   gap: toRem(64);
-  padding: toRem(69) toRem(16) 0;
+  padding: toRem(69) toRem(16);
 
   @media screen and (min-width: $lg) {
     gap: toRem(88);
-    padding: toRem(104) toRem(78) 0;
+    padding: toRem(104) toRem(78);
   }
   @media screen and (min-width: $two-xl) {
     gap: toRem(128);
-    padding: toRem(104) toRem(100) 0;
+    padding: toRem(104) toRem(100);
   }
 }
 
@@ -48,6 +48,7 @@
 
   h3.subtitle {
     font-size: toRem(16);
+    font-weight: 400;
     line-height: 1.5;
     text-align: center;
     color: var(--black-70);
@@ -59,14 +60,73 @@
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(32);
-      font-weight: normal;
+      font-weight: 400;
       line-height: 1.19;
     }
   }
 }
 
 .playlist-form__container {
+  width: 100%;
   background-color: #2e2e2e;
-  padding: toRem(24) toRem(16);
   border-radius: toRem(6);
+  padding: toRem(24) toRem(16);
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(48) toRem(40);
+    border-radius: toRem(12);
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(48) toRem(52);
+  }
+
+  h2.title {
+    font-size: toRem(22);
+    line-height: 0.91;
+    margin: 0 0 toRem(24);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(40);
+      font-weight: bold;
+      line-height: 0.95;
+      margin: 0 0 toRem(48);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(48);
+      line-height: 0.79;
+      margin: 0 0 toRem(64);
+    }
+  }
+}
+
+.underline {
+  width: 100%;
+  height: toRem(2);
+  background-color: var(--black-50);
+  margin: toRem(24) 0;
+
+  @media screen and (min-width: $lg) {
+    margin: toRem(80 - 48) 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    margin: toRem(95 - 64) 0;
+  }
+}
+
+.playlist-forms {
+  @include column-centered();
+  list-style: none;
+  width: 100%;
+  gap: toRem(24);
+
+  @media screen and (min-width: $lg) {
+    gap: toRem(48);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(56);
+  }
+
+  li {
+    width: 100%;
+  }
 }
