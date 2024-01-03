@@ -26,13 +26,13 @@ export class SharedService {
   }
 
   populateFormArray(): void {
-    for (let i: number = 0; i < 10; i++) {
+    for (let i: number = 0; i < 2; i++) {
       this.playlistFormArray.push(
         new FormGroup({
           playlistName: new FormControl('', [...this.validation]),
           artist_genre: new FormControl('', [...this.validation]),
           spotifyLink: new FormControl('', [...this.validation]),
-          appleMusicLink: new FormControl('', [...this.validation]),
+          appleLink: new FormControl('', [...this.validation]),
         })
       );
     }

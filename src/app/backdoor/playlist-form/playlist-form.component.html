@@ -55,11 +55,11 @@
       type="text"
       id="apple"
       name="apple"
-      formControlName="appleMusicLink"
+      formControlName="appleLink"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
     <app-validation-message
-      *ngIf="appleMusicLink?.invalid && appleMusicLink?.touched"
+      *ngIf="appleLink?.invalid && appleLink?.touched"
     >
       Please fill out this field.
     </app-validation-message>

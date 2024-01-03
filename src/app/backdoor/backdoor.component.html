@@ -7,7 +7,11 @@
     </h3>
   </section>
 
-  <form class="playlist-form__container" [formGroup]="musicForm" (ngSubmit)="onSubmit()">
+  <form
+    class="playlist-form__container"
+    [formGroup]="musicForm"
+    (ngSubmit)="onSubmit()"
+  >
     <h2 class="title">My Playlists</h2>
 
     <app-favorite-music [form]="favoriteForm"> </app-favorite-music>
@@ -20,6 +24,9 @@
       </li>
     </ul>
 
-    <button [disabled]="musicForm.invalid" type="submit">Save Changes</button>
+    <button [disabled]="musicForm.invalid" type="submit">
+      <span [ngStyle]="{ opacity: 1 }">Save Changes</span>
+      <span class="loading-spinner" *ngIf="false"></span>
+    </button>
   </form>
 </main>

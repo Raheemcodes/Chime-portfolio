@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 import { FormArray, FormGroup } from '@angular/forms';
+import { DataService } from '../shared/data.service';
+import { Favorite, Music, Playlist } from '../shared/shared.mdel';
 
 @Component({
   selector: 'app-backdoor',
@@ -10,7 +12,10 @@ import { FormArray, FormGroup } from '@angular/forms';
 export class BackdoorComponent implements OnInit {
   musicForm = this.sharedService.musicForm;
 
-  constructor(private sharedService: SharedService) {}
+  constructor(
+    private sharedService: SharedService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -24,5 +29,12 @@ export class BackdoorComponent implements OnInit {
 
   onSubmit() {
     console.log(this.musicForm.value);
+
+    const music: Music = {
+      favorite: this.musicForm.value.favoriteForm as Favorite,
+      playlists: this.musicForm.value.playlistFormArray as Playlist[],
+    };
+
+    this.dataService.addMusic(music).subscribe()
   }
 }

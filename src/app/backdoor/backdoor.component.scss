@@ -132,7 +132,8 @@
 }
 
 button {
-  display: block;
+  @include centered();
+  position: relative;
   font-size: toRem(16);
   font-weight: 500;
   line-height: 1.5;
@@ -155,5 +156,28 @@ button {
     font-size: toRem(24);
     line-height: 1;
     margin: toRem(64) auto 0;
+  }
+
+  .loading-spinner {
+    position: absolute;
+    display: block;
+    width: toRem(28);
+    height: toRem(28);
+    border: toRem(4) solid var(--main-color);
+    border-radius: 50%;
+    border-top-color: #0000;
+    animation: spin 500ms linear infinite ;
+  }
+
+
+
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
   }
 }

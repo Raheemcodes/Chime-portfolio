@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   frontendAddress: 'http://localhost:4200',
+  restAPI: 'https://chimezie-portfolio-default-rtdb.firebaseio.com/music.json'
 };
 
 /*
