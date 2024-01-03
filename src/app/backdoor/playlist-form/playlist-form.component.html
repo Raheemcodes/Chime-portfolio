@@ -1,14 +1,36 @@
-<form>
-  <h2 class="title">Favourite Music</h2>
+<form [formGroup]="form">
+  <h2 class="title">{{ index + 1 }}.</h2>
 
   <div class="control">
-    <label for="name">Music Name</label>
+    <label for="name">Playlist Name</label>
     <input
       type="text"
       id="name"
       name="name"
+      formControlName="playlistName"
       placeholder="Various Artists, Afro-Alternative."
     />
+    <app-validation-message
+      *ngIf="playlistName(form)?.invalid && playlistName(form)?.touched"
+    >
+      Please fill out this field.
+    </app-validation-message>
+  </div>
+
+  <div class="control">
+    <label for="artist">Artist/ Genre</label>
+    <input
+      type="text"
+      id="artist"
+      name="artist"
+      formControlName="artist_genre"
+      placeholder="Various Artists, Afro-Alternative."
+    />
+    <app-validation-message
+      *ngIf="artist_genre(form)?.invalid && artist_genre(form)?.touched"
+    >
+      Please fill out this field.
+    </app-validation-message>
   </div>
 
   <div class="control">
@@ -17,17 +39,29 @@
       type="text"
       id="spotify"
       name="spotify"
+      formControlName="spotifyLink"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
+    <app-validation-message
+      *ngIf="spotifyLink(form)?.invalid && spotifyLink(form)?.touched"
+    >
+      Please fill out this field.
+    </app-validation-message>
   </div>
 
   <div class="control">
     <label for="apple">Apple Music Link</label>
     <input
       type="text"
-      placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
       id="apple"
       name="apple"
+      formControlName="appleMusicLink"
+      placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
+    <app-validation-message
+      *ngIf="appleMusicLink(form)?.invalid && appleMusicLink(form)?.touched"
+    >
+      Please fill out this field.
+    </app-validation-message>
   </div>
 </form>

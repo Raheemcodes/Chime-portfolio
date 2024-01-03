@@ -130,3 +130,30 @@
     width: 100%;
   }
 }
+
+button {
+  display: block;
+  font-size: toRem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--black-100);
+  border-radius: toRem(8);
+  background-color: var(--main-blue);
+  padding: toRem(12) toRem(24);
+  margin: toRem(24) 0 0;
+  transition: opacity 0.3s ease-out;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(16) toRem(32);
+    margin: toRem(56) auto 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(24);
+    line-height: 1;
+    margin: toRem(64) auto 0;
+  }
+}

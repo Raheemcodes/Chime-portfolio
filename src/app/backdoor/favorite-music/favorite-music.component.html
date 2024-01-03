@@ -1,24 +1,18 @@
-<form>
-  <h2 class="title">1.</h2>
+<form [formGroup]="form">
+  <h2 class="title">Favourite Music</h2>
 
   <div class="control">
-    <label for="name">Playlist Name</label>
+    <label for="name">Music Name</label>
     <input
       type="text"
       id="name"
       name="name"
       placeholder="Various Artists, Afro-Alternative."
+      formControlName="musicName"
     />
-  </div>
-
-  <div class="control">
-    <label for="artist">Artist/ Genre</label>
-    <input
-      type="text"
-      id="artist"
-      name="artist"
-      placeholder="Various Artists, Afro-Alternative."
-    />
+    <app-validation-message *ngIf="musicName?.invalid && musicName?.touched">
+      Please fill out this field.
+    </app-validation-message>
   </div>
 
   <div class="control">
@@ -28,7 +22,12 @@
       id="spotify"
       name="spotify"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
+      formControlName="spotifyLink"
     />
+       <app-validation-message *ngIf="spotifyLink?.invalid && spotifyLink?.touched">
+      Please fill out this field.
+    </app-validation-message>
+
   </div>
 
   <div class="control">
@@ -38,6 +37,10 @@
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
       id="apple"
       name="apple"
+      formControlName="appleLink"
     />
+       <app-validation-message *ngIf="appleLink?.invalid && appleLink?.touched">
+      Please fill out this field.
+    </app-validation-message>
   </div>
 </form>

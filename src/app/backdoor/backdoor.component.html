@@ -7,44 +7,19 @@
     </h3>
   </section>
 
-  <section class="playlist-form__container">
+  <section class="playlist-form__container" [formGroup]="musicForm">
     <h2 class="title">My Playlists</h2>
 
-    <app-playlist-form> </app-playlist-form>
+    <app-favorite-music [form]="favoriteForm"> </app-favorite-music>
 
     <div class="underline"></div>
 
-    <ul class="playlist-forms">
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
-      </li>
-      <li>
-        <app-playlist-edit-form></app-playlist-edit-form>
+    <ul class="playlist-forms" formArrayName="playlistFormArray">
+      <li *ngFor="let form of playlistFormArray.controls; let i = index">
+        <app-playlist-form [form]="form" [index]="i"></app-playlist-form>
       </li>
     </ul>
+
+    <button [disabled]="musicForm.invalid">Save Changes</button>
   </section>
 </main>

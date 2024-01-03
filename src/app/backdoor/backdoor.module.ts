@@ -1,14 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackdoorComponent } from './backdoor.component';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BackdoorComponent } from './backdoor.component';
+import { FavoriteMusicComponent } from './favorite-music/favorite-music.component';
 import { PlaylistFormComponent } from './playlist-form/playlist-form.component';
-import { PlaylistEditFormComponent } from './playlist-edit-form/playlist-edit-form.component';
+import { ValidationMessageComponent } from './validation-message/validation-message.component';
 
 @NgModule({
-  declarations: [BackdoorComponent, PlaylistFormComponent, PlaylistEditFormComponent],
+  declarations: [
+    BackdoorComponent,
+    PlaylistFormComponent,
+    FavoriteMusicComponent,ValidationMessageComponent
+  ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild([{ path: '', component: BackdoorComponent }]),
   ],
 })

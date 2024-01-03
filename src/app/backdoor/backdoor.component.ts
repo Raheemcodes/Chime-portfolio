@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-backdoor',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./backdoor.component.scss']
 })
 export class BackdoorComponent implements OnInit {
+  musicForm = this.sharedService.musicForm;
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
+  }
+
+  get favoriteForm(): FormGroup {
+    return <FormGroup>this.musicForm.get('favoriteForm');
+  }
+
+  get playlistFormArray() {
+    return <FormArray<FormGroup>>this.musicForm.get('playlistFormArray');
   }
 
 }

@@ -17,3 +17,21 @@ export interface CaseStudy {
   link: string;
   background: string;
 }
+
+export interface Favorite {
+  musicName: string;
+  spotifyLink: string;
+  appleLink: string;
+}
+
+export interface Playlist {
+  playlistName: string;
+  artist_genre: string;
+  spotifyLink: string;
+  appleLink: string;
+}
+
+export interface Music {
+  favorite: Favorite;
+  playlists: Playlist[];
+}

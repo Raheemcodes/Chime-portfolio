@@ -36,6 +36,7 @@ form {
 }
 
 .control {
+position: relative;
   @include column-flex();
   gap: toRem(8);
 
