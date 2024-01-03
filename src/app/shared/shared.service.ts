@@ -27,7 +27,7 @@ export class SharedService {
 
   populateFormArray(): void {
     for (let i: number = 0; i < 10; i++) {
-      this.playlistFormArray.controls.push(
+      this.playlistFormArray.push(
         new FormGroup({
           playlistName: new FormControl('', [...this.validation]),
           artist_genre: new FormControl('', [...this.validation]),

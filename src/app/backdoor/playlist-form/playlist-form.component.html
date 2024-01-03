@@ -11,7 +11,7 @@
       placeholder="Various Artists, Afro-Alternative."
     />
     <app-validation-message
-      *ngIf="playlistName(form)?.invalid && playlistName(form)?.touched"
+      *ngIf="playlistName?.invalid && playlistName?.touched"
     >
       Please fill out this field.
     </app-validation-message>
@@ -27,7 +27,7 @@
       placeholder="Various Artists, Afro-Alternative."
     />
     <app-validation-message
-      *ngIf="artist_genre(form)?.invalid && artist_genre(form)?.touched"
+      *ngIf="artist_genre?.invalid && artist_genre?.touched"
     >
       Please fill out this field.
     </app-validation-message>
@@ -43,7 +43,7 @@
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
     <app-validation-message
-      *ngIf="spotifyLink(form)?.invalid && spotifyLink(form)?.touched"
+      *ngIf="spotifyLink?.invalid && spotifyLink?.touched"
     >
       Please fill out this field.
     </app-validation-message>
@@ -59,7 +59,7 @@
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
     <app-validation-message
-      *ngIf="appleMusicLink(form)?.invalid && appleMusicLink(form)?.touched"
+      *ngIf="appleMusicLink?.invalid && appleMusicLink?.touched"
     >
       Please fill out this field.
     </app-validation-message>

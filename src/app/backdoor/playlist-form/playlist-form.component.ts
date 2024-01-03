@@ -4,29 +4,32 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-playlist-form',
   templateUrl: './playlist-form.component.html',
-  styleUrls: ['../favorite-music/favorite-music.component.scss'],
+  styleUrls: ['../favorite-music/favorite-music.component.scss']
 })
 export class PlaylistFormComponent implements OnInit {
-  @Input('form') form!: FormGroup;
-  @Input('index') index!: number;
+  @Input('form') form!: FormGroup
+  @Input('index') index!: number
 
-  constructor() {}
+  constructor() { }
 
-  playlistName(form: FormGroup) {
-    return form.get('playlistName');
+  get playlistName(){
+    return this.form.get('playlistName')
   }
 
-  artist_genre(form: FormGroup) {
-    return form.get('artist_genre');
+  get artist_genre(){
+    return this.form.get('artist_genre')
   }
 
-  spotifyLink(form: FormGroup) {
-    return form.get('spotifyLink');
+  get spotifyLink(){
+    return this.form.get('spotifyLink')
   }
 
-  appleMusicLink(form: FormGroup) {
-    return form.get('appleMusicLink');
+  get appleMusicLink(){
+    return this.form.get('appleMusicLink')
   }
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+  }
+
 }
