@@ -313,6 +313,7 @@
     @include display-flex();
     width: 100%;
     position: relative;
+    border-radius: toRem(6);
 
     .active-bar {
       position: absolute;
@@ -376,6 +377,7 @@ ul.playlist {
   list-style: none;
   padding: toRem(12) 0 0;
   margin: toRem(39) 0;
+  gap: 0.25rem;
 
   @media screen and (min-width: $md) {
     padding: toRem(32) 0 0;

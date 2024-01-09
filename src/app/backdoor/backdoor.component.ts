@@ -12,10 +12,7 @@ import { Favorite, Music, Playlist } from '../shared/shared.mdel';
 export class BackdoorComponent implements OnInit {
   musicForm = this.sharedService.musicForm;
 
-  constructor(
-    private sharedService: SharedService,
-    private dataService: DataService
-  ) {}
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {}
 
@@ -35,6 +32,6 @@ export class BackdoorComponent implements OnInit {
       playlists: this.musicForm.value.playlistFormArray as Playlist[],
     };
 
-    this.dataService.addMusic(music).subscribe()
+    this.sharedService.addMusic(music).subscribe();
   }
 }
