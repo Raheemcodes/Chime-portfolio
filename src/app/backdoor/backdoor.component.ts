@@ -11,6 +11,7 @@ import { Favorite, Music, Playlist } from '../shared/shared.mdel';
 })
 export class BackdoorComponent implements OnInit {
   musicForm = this.sharedService.musicForm;
+  isSubmitting: boolean = false;
 
   constructor(private sharedService: SharedService) {}
 
@@ -24,14 +25,33 @@ export class BackdoorComponent implements OnInit {
     return <FormArray<FormGroup>>this.musicForm.get('playlistFormArray');
   }
 
+  // getMusic(): void {
+  //   this.musicForm = this.sharedService.musicForm;
+
+  //   if (!this.musicForm.value.favoriteForm?.musicName) {
+  //     this.sharedService.fetchMusic().subscribe({
+  //       next: (music) => {
+  //         this.music = music;
+  //         setTimeout(() => {
+  //           this.isLoading = false;
+  //         }, 5000);
+  //       },
+  //     });
+  //   } else {
+  //     this.isLoading = false;
+  //   }
+  // }
+
   onSubmit() {
-    console.log(this.musicForm.value);
+    this.isSubmitting = true;
 
     const music: Music = {
       favorite: this.musicForm.value.favoriteForm as Favorite,
       playlists: this.musicForm.value.playlistFormArray as Playlist[],
     };
 
-    this.sharedService.addMusic(music).subscribe();
+    this.sharedService.addMusic(music).subscribe({
+      complete: () => (this.isSubmitting = false),
+    });
   }
 }

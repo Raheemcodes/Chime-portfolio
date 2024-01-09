@@ -29,7 +29,7 @@ export class SharedService {
   }
 
   populateFormArray(): void {
-    for (let i: number = 0; i < 2; i++) {
+    for (let i: number = 0; i < 10; i++) {
       this.playlistFormArray.push(
         new FormGroup({
           playlistName: new FormControl('', [...this.validation]),

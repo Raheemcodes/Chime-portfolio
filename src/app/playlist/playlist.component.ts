@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PlaylistComponent implements OnInit {
   music!: Music;
   isLoading: boolean = true;
+  playlistState: 'spotify' | 'apple' = 'spotify';
 
   constructor(private sharedService: SharedService) {}
 
@@ -32,5 +33,9 @@ export class PlaylistComponent implements OnInit {
     } else {
       this.isLoading = false;
     }
+  }
+
+  changePlaylistState(state: 'spotify' | 'apple'): void {
+    this.playlistState = state;
   }
 }

@@ -196,8 +196,11 @@
       </button>
     </div>
     <div class="btn-actions" *ngIf="!isLoading">
-      <div class="active-bar"></div>
-      <button href="/" class="music-btn">
+      <div
+        class="active-bar"
+        [ngStyle]="{ left: playlistState === 'spotify' ? '0' : '50%' }"
+      ></div>
+      <button (click)="changePlaylistState('spotify')" class="music-btn">
         <div class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +218,7 @@
         <span>Spotify</span>
       </button>
 
-      <button href="/" class="music-btn">
+      <button (click)="changePlaylistState('apple')" class="music-btn">
         <div class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -264,10 +267,19 @@
           class="play"
           *ngFor="let playlist of music.playlists; let i = index"
         >
-          <div class="title">{{ i }}. {{ playlist.playlistName }}</div>
-          <div class="artists-genre">
-            <span>{{ playlist.artist_genre }}</span>
-          </div>
+          <a
+            [href]="
+              playlistState === 'spotify'
+                ? playlist.spotifyLink
+                : playlist.appleLink
+            "
+            target="_blank"
+          >
+            <div class="title">{{ i }}. {{ playlist.playlistName }}</div>
+            <div class="artists-genre">
+              <span>{{ playlist.artist_genre }}</span>
+            </div></a
+          >
         </li></ng-container
       >
     </ul>

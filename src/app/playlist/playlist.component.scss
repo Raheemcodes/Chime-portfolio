@@ -389,10 +389,16 @@ ul.playlist {
 }
 
 li.play {
-  @include column-flex();
-  gap: toRem(12);
-  padding: toRem(12) toRem(24);
-  cursor: pointer;
+  width: 100%;
+
+  a {
+    @include column-flex();
+    gap: toRem(12);
+    width: 100%;
+    color: var(--main-color);
+    padding: toRem(12) toRem(24);
+    cursor: pointer;
+  }
 
   @media (hover: hover) {
     &:hover,
