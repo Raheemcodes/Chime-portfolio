@@ -398,6 +398,12 @@ li.play {
     color: var(--main-color);
     padding: toRem(12) toRem(24);
     cursor: pointer;
+
+    @media screen and (min-width: $md) {
+      gap: toRem(18);
+    }
+    @media screen and (min-width: $two-xl) {
+    }
   }
 
   @media (hover: hover) {
@@ -418,11 +424,34 @@ li.play {
     font-size: toRem(20);
     font-weight: bold;
     line-height: 1;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(40);
+      font-style: 500;
+      font-weight: 700;
+      line-height: 1;
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(40);
+      font-weight: 700;
+      line-height: 1; /* 100% */
+    }
   }
 
   .artists-genre {
     font-size: toRem(14);
     line-height: 1;
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(24);
+      font-weight: 400;
+      line-height: 1; /* 100% */
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(24);
+      font-weight: 400;
+      line-height: 1; /* 100% */
+    }
   }
 }
 
