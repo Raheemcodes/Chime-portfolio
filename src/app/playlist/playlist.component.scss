@@ -206,7 +206,7 @@
       padding: toRem(48) 0 0;
       gap: toRem(48);
     }
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $two-xl) {
       padding: toRem(56) 0 0;
       gap: toRem(64);
     }
@@ -229,7 +229,7 @@
         line-height: toRem(24);
         color: var(--main-black, #222);
         gap: toRem(16);
-        padding: toRem(16) toRem(48);
+        padding: toRem(27) toRem(48);
       }
 
       .logo {
