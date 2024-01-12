@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 export class PlaylistFormComponent implements OnInit {
   @Input('form') form!: FormGroup;
   @Input('index') index!: number;
+  @Input('isLoading') isLoading: boolean = true;
 
   constructor() {}
 

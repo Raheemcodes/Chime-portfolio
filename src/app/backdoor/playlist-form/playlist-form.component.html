@@ -1,9 +1,33 @@
 <form [formGroup]="form">
-  <h2 class="title">{{ index + 1 }}.</h2>
+  <h2 class="title">
+    <span>{{ index + 1 }}.</span>
+
+    <button type="button" class="move" title="Move button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+      >
+        <path
+          d="M2.25 9H15.75M2.25 4.5H15.75M2.25 13.5H15.75"
+          stroke="#FDFDFE"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </h2>
 
   <div class="control">
     <label for="name">Playlist Name</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
+
     <input
+      *ngIf="!isLoading"
       type="text"
       id="name"
       name="name"
@@ -19,7 +43,11 @@
 
   <div class="control">
     <label for="artist">Artist/ Genre</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       id="artist"
       name="artist"
@@ -35,7 +63,11 @@
 
   <div class="control">
     <label for="spotify">Spotify Link</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       id="spotify"
       name="spotify"
@@ -51,16 +83,18 @@
 
   <div class="control">
     <label for="apple">Apple Music Link</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       id="apple"
       name="apple"
       formControlName="appleLink"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
     />
-    <app-validation-message
-      *ngIf="appleLink?.invalid && appleLink?.touched"
-    >
+    <app-validation-message *ngIf="appleLink?.invalid && appleLink?.touched">
       Please fill out this field.
     </app-validation-message>
   </div>

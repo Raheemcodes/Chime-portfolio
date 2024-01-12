@@ -1,11 +1,10 @@
 @import "../../shared/shared";
 
 :host {
+  @include display-flex();
   top: 100%;
   position: absolute;
-  @include display-flex();
   z-index: 4;
-
   margin: toRem(4) toRem(16) 0;
 
   @media screen and (min-width: $md) {
@@ -15,7 +14,8 @@
   animation: fadeIn 500ms ease-out;
 }
 
-.caution-container {
+.caution-container,
+.success-container {
   @include centered();
   position: relative;
   background-color: var(--caution-orange);
@@ -44,6 +44,14 @@
     border-right: toRem(7) solid transparent;
     border-bottom: toRem(8) solid var(--caution-orange);
     top: toRem(-8);
+  }
+}
+
+.success-container {
+  background-color: var(--success-green);
+
+  .pointer {
+    border-bottom: toRem(8) solid var(--success-green);
   }
 }
 

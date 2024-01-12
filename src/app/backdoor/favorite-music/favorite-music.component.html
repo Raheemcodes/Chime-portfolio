@@ -3,7 +3,11 @@
 
   <div class="control">
     <label for="name">Music Name</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       id="name"
       name="name"
@@ -17,29 +21,38 @@
 
   <div class="control">
     <label for="spotify">Spotify Link</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       id="spotify"
       name="spotify"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
       formControlName="spotifyLink"
     />
-       <app-validation-message *ngIf="spotifyLink?.invalid && spotifyLink?.touched">
+    <app-validation-message
+      *ngIf="spotifyLink?.invalid && spotifyLink?.touched"
+    >
       Please fill out this field.
     </app-validation-message>
-
   </div>
 
   <div class="control">
     <label for="apple">Apple Music Link</label>
+    <div *ngIf="isLoading" type="text" title="skeleton" class="skeleton">
+      Various Artists, Afro-Alternative.
+    </div>
     <input
+      *ngIf="!isLoading"
       type="text"
       placeholder="https://open.spotify.com/playlist/0Dojr51ByIdwOINWZsloT4?si=5a7f56b7c84a4b63"
       id="apple"
       name="apple"
       formControlName="appleLink"
     />
-       <app-validation-message *ngIf="appleLink?.invalid && appleLink?.touched">
+    <app-validation-message *ngIf="appleLink?.invalid && appleLink?.touched">
       Please fill out this field.
     </app-validation-message>
   </div>

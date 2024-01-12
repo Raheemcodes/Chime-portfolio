@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../shared/shared.service';
 import { FormArray, FormGroup } from '@angular/forms';
-import { DataService } from '../shared/data.service';
 import { Favorite, Music, Playlist } from '../shared/shared.mdel';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-backdoor',
@@ -12,10 +11,27 @@ import { Favorite, Music, Playlist } from '../shared/shared.mdel';
 export class BackdoorComponent implements OnInit {
   musicForm = this.sharedService.musicForm;
   isSubmitting: boolean = false;
+  isLoading: boolean = false;
+  _isSubmitted: boolean = false;
 
   constructor(private sharedService: SharedService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getMusic();
+  }
+
+  set isSubmitted(val: boolean) {
+    if (!val) return;
+    this._isSubmitted = val;
+
+    setTimeout(() => {
+      this._isSubmitted = false;
+    }, 3000);
+  }
+
+  get isSubmitted(): boolean {
+    return this._isSubmitted;
+  }
 
   get favoriteForm(): FormGroup {
     return <FormGroup>this.musicForm.get('favoriteForm');
@@ -25,25 +41,26 @@ export class BackdoorComponent implements OnInit {
     return <FormArray<FormGroup>>this.musicForm.get('playlistFormArray');
   }
 
-  // getMusic(): void {
-  //   this.musicForm = this.sharedService.musicForm;
+  getMusic(): void {
+    this.isLoading = true;
+    this.musicForm = this.sharedService.musicForm;
 
-  //   if (!this.musicForm.value.favoriteForm?.musicName) {
-  //     this.sharedService.fetchMusic().subscribe({
-  //       next: (music) => {
-  //         this.music = music;
-  //         setTimeout(() => {
-  //           this.isLoading = false;
-  //         }, 5000);
-  //       },
-  //     });
-  //   } else {
-  //     this.isLoading = false;
-  //   }
-  // }
+    if (!this.musicForm.value.favoriteForm?.musicName) {
+      this.sharedService.fetchMusic().subscribe({
+        complete: () => {
+          this.musicForm = this.sharedService.musicForm;
+          this.isLoading = false;
+        },
+      });
+    } else {
+      this.isLoading = false;
+    }
+  }
 
   onSubmit() {
+    if (this.isLoading) return;
     this.isSubmitting = true;
+    this.isSubmitted = false;
 
     const music: Music = {
       favorite: this.musicForm.value.favoriteForm as Favorite,
@@ -51,7 +68,10 @@ export class BackdoorComponent implements OnInit {
     };
 
     this.sharedService.addMusic(music).subscribe({
-      complete: () => (this.isSubmitting = false),
+      complete: () => {
+        this.isSubmitting = false;
+        this.isSubmitted = true;
+      },
     });
   }
 }

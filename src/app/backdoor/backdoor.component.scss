@@ -158,6 +158,12 @@ button {
     margin: toRem(64) auto 0;
   }
 
+  app-validation-message {
+    width: toRem(200);
+    left: 0;
+    align-self: flex-start;
+  }
+
   .loading-spinner {
     position: absolute;
     display: block;
@@ -166,11 +172,8 @@ button {
     border: toRem(4) solid var(--main-color);
     border-radius: 50%;
     border-top-color: #0000;
-    animation: spin 500ms linear infinite ;
+    animation: spin 500ms linear infinite;
   }
-
-
-
 }
 
 @keyframes spin {

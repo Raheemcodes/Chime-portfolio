@@ -14,19 +14,27 @@
   >
     <h2 class="title">My Playlists</h2>
 
-    <app-favorite-music [form]="favoriteForm"> </app-favorite-music>
+    <app-favorite-music [form]="favoriteForm" [isLoading]="isLoading">
+    </app-favorite-music>
 
     <div class="underline"></div>
 
     <ul class="playlist-forms" formArrayName="playlistFormArray">
       <li *ngFor="let form of playlistFormArray.controls; let i = index">
-        <app-playlist-form [form]="form" [index]="i"></app-playlist-form>
+        <app-playlist-form
+          [form]="form"
+          [index]="i"
+          [isLoading]="isLoading"
+        ></app-playlist-form>
       </li>
     </ul>
 
     <button [disabled]="musicForm.invalid" type="submit">
       <span [ngStyle]="{ opacity: !isSubmitting ? 1 : 0 }">Save Changes</span>
       <span class="loading-spinner" *ngIf="isSubmitting"></span>
+      <app-validation-message type="success" *ngIf="isSubmitted">
+        Changes saved!
+      </app-validation-message>
     </button>
   </form>
 </main>

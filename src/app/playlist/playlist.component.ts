@@ -25,9 +25,7 @@ export class PlaylistComponent implements OnInit {
       this.sharedService.fetchMusic().subscribe({
         next: (music) => {
           this.music = music;
-          setTimeout(() => {
-            this.isLoading = false;
-          }, 5000);
+          this.isLoading = false;
         },
       });
     } else {

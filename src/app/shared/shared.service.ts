@@ -95,7 +95,6 @@ export class SharedService {
   fetchMusic(): Observable<Music> {
     return this.dataService.fetchMusic().pipe(
       tap((music) => {
-        console.log(music);
         this.music = music;
       })
     );
