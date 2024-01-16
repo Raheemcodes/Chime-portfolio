@@ -15,10 +15,6 @@ import { Sortable, SortableStopEvent } from '@shopify/draggable';
 export class SortableDirective implements AfterViewInit {
   @Input() data!: any[];
   sortable!: Sortable;
-
-  // @Output() start = new EventEmitter();
-  // @Output() sort = new EventEmitter();
-  // @Output() sorted = new EventEmitter();
   @Output() stop = new EventEmitter();
 
   constructor(private el: ElementRef) {}
