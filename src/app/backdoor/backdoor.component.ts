@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 import { Favorite, Music, Playlist } from '../shared/shared.mdel';
 import { SharedService } from '../shared/shared.service';
+import { SortableStopEvent } from '@shopify/draggable';
 
 @Component({
   selector: 'app-backdoor',
@@ -55,6 +56,10 @@ export class BackdoorComponent implements OnInit {
     } else {
       this.isLoading = false;
     }
+  }
+
+  update(e: any) {
+    this.playlistFormArray.updateValueAndValidity(e);
   }
 
   onSubmit() {

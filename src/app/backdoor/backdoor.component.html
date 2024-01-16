@@ -19,7 +19,13 @@
 
     <div class="underline"></div>
 
-    <ul class="playlist-forms" formArrayName="playlistFormArray">
+    <ul
+      class="playlist-forms"
+      formArrayName="playlistFormArray"
+      fireDrop
+      [data]="musicForm.controls.playlistFormArray.controls"
+      (stop)="update($event)"
+    >
       <li *ngFor="let form of playlistFormArray.controls; let i = index">
         <app-playlist-form
           [form]="form"

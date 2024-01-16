@@ -6,12 +6,13 @@ import { BackdoorComponent } from './backdoor.component';
 import { FavoriteMusicComponent } from './favorite-music/favorite-music.component';
 import { PlaylistFormComponent } from './playlist-form/playlist-form.component';
 import { ValidationMessageComponent } from './validation-message/validation-message.component';
+import { SortableDirective } from './sortable.directive';
 
 @NgModule({
   declarations: [
     BackdoorComponent,
     PlaylistFormComponent,
-    FavoriteMusicComponent,ValidationMessageComponent
+    FavoriteMusicComponent,ValidationMessageComponent, SortableDirective
   ],
   imports: [
     CommonModule,

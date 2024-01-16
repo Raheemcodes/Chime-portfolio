@@ -118,6 +118,7 @@
   list-style: none;
   width: 100%;
   gap: toRem(24);
+  transition: all 0.1s ease-out;
 
   @media screen and (min-width: $lg) {
     gap: toRem(48);
@@ -128,6 +129,7 @@
 
   li {
     width: 100%;
+    transition: all 0.1s ease-out;
   }
 }
 
@@ -174,6 +176,26 @@ button {
     border-top-color: #0000;
     animation: spin 500ms linear infinite;
   }
+}
+
+// .draggable-container--is-dragging {
+//   border: toRem(5) blue solid;
+// }
+
+.draggable-source--is-dragging {
+  transform: scale(0.8);
+  opacity: 0.6;
+}
+
+.draggable-source--placed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.draggable-mirror {
+  transform: scale(0.4);
+  opacity: 0.8;
+  display: block;
 }
 
 @keyframes spin {
