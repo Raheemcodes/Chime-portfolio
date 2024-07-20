@@ -31,11 +31,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: toRem(12); /* 150% */
+  color: var(--white);
+  text-align: center;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(toRem(16));
   border-radius: toRem(56);
   border: toRem(1) solid rgba(255, 255, 255, 0.08);
-  color: var(--white);
   padding: toRem(8);
   margin: 0 auto toRem(24);
 
