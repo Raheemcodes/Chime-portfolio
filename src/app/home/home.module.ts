@@ -7,9 +7,10 @@ import { ClickDirective } from '../click.directive';
 import { FooterModule } from '../footer/footer.module';
 import { ResponseModule } from '../response/response.module';
 import { HomeComponent } from './home.component';
+import { WorkItemComponent } from '../components/work-item/work-item.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, WorkItemComponent],
   imports: [
     CommonModule,
     CaseStudyListModule,

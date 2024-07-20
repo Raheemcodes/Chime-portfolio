@@ -1,5 +1,7 @@
 <main id="home">
   <section class="overview">
+    <div class="welcome-msg">👋 Hi, I’m ChimeXD</div>
+
     <div class="intro">
       <div
         class="job-title"
@@ -7,7 +9,8 @@
         aray-offsetY="-20%"
         aray-duration="800ms"
       >
-        Product Designer
+        I’m a Product Designer
+        <span class="special"> and also a Web3 Degen </span>
       </div>
       <div
         class="job-desc"
@@ -15,18 +18,11 @@
         aray-offsetX="-10%"
         aray-delay="500ms"
       >
-        A product designer crafting meaningful user-centric experiences. Global
-        perspective, diverse collaborations.
+        Creating awesome user experiences, designing for startups, teaming up
+        with all sorts of people, and when I'm not doing that, I'm degen-ing any
+        coin that moves.
       </div>
-      <div
-        class="job-status"
-        aray-animate="fadeIn"
-        aray-offsetX="10%"
-        aray-delay="500ms"
-      >
-        <div class="status-circle"></div>
-        <div class="status">Availiable for selected projects</div>
-      </div>
+
       <a
         appClick
         aray-animate="fadeIn"
@@ -38,7 +34,7 @@
         href="mailto:Ekpenduchimezie1@gmail.com"
         class="cta"
       >
-        Hire me
+        Book a Call
       </a>
 
       <app-response
@@ -47,29 +43,6 @@
         aray-duration="500ms"
         aray-offsetX="-5%"
       ></app-response>
-    </div>
-
-    <div
-      class="intro-bg-img"
-      aray-animate="fadeIn"
-      aray-delay="500ms"
-      aray-duration="800ms"
-      aray-offsetX="10%"
-    >
-      <img
-        ngSrc="./../../assets/background/pc/bg-image.png"
-        alt
-        width="563"
-        height="633"
-        sizes="100%"
-        srcset="
-          ./../../assets/background/mobile/bg-image.png  563w,
-          ./../../assets/background/pc/bg-image.png      835w,
-          ./../../assets/background/pc/bg-image_lg.png  1152w
-        "
-        (error)="$any($event.currentTarget).style.display = 'none'"
-        priority
-      />
     </div>
   </section>
 
@@ -81,105 +54,23 @@
       aray-duration="300ms"
       aray-offsetY="-10%"
     >
-      How I work
+      How <span class="special">I work</span>
     </div>
     <div class="work-overview">
-      <div class="work-content">
-        <h2
-          class="process-title"
-          aray-animate="fadeIn"
-          aray-delay="500ms"
-          aray-duration="300ms"
-          aray-offsetX="10%"
-        >
-          Design Process
-        </h2>
-        <p
-          class="process__sub-title"
-          aray-animate="fadeIn"
-          aray-delay="800ms"
-          aray-duration="500ms"
-          aray-offsetX="10%"
-        >
-          Reach your business goals with outstanding user experience. Let’s
-          start working on your project.
-        </p>
-      </div>
-
-      <div class="btn-container">
-        <a
-          appClick
-          aray-animate="fadeIn"
-          aray-delay="500ms"
-          aray-duration="600ms"
-          aray-offsetX="-10%"
-          class="start-project"
-          href="https://j3en9uepgkn.typeform.com/to/Oy68WS29"
-          target="_blank"
-          class="blue"
-          >Start a Project</a
-        >
-        <button
-          appClick
-          aray-animate="fadeIn"
-          aray-delay="500ms"
-          aray-duration="600ms"
-          aray-offsetX="10%"
-          aria-label="Learn More Button"
-          class="white"
-          (click)="sharedService.navigate('/more')"
-        >
-          Learn more
-        </button>
-      </div>
+      <ul class="work-list">
+        <li class="work-item">
+          <app-work-item></app-work-item>
+        </li>
+        <div class="vertical-line"></div>
+        <li class="work-item">
+          <app-work-item></app-work-item>
+        </li>
+        <div class="vertical-line"></div>
+        <li class="work-item">
+          <app-work-item></app-work-item>
+        </li>
+      </ul>
     </div>
-
-    <ul class="process-list">
-      <li
-        class="process"
-        aray-animate="fadeIn"
-        aray-delay="600ms"
-        aray-duration="500ms"
-        aray-offsetY="20%"
-      >
-        <div class="num">01</div>
-        <h3 class="title">Service Design</h3>
-        <div class="process-content">
-          Create services and procedures that satisfy your clients' needs by
-          understanding their entire journeys.
-        </div>
-      </li>
-
-      <li
-        class="process"
-        aray-animate="fadeIn"
-        aray-delay="900ms"
-        aray-duration="550ms"
-        aray-offsetY="30%"
-      >
-        <div class="num">02</div>
-        <h3 class="title">UI/UX Design</h3>
-        <div class="process-content">
-          Design digital touchpoints that are convenient to the user experience
-          and the business.
-        </div>
-      </li>
-
-      <li
-        class="process"
-        aray-animate="fadeIn"
-        aray-delay="1.2s"
-        aray-duration="600ms"
-        aray-offsetY="40%"
-      >
-        <div class="num">03</div>
-        <h3 class="title">Design Systems</h3>
-        <div class="process-content">
-          With a design system, you can assure scalability and unify your
-          digital experience across services.
-        </div>
-      </li>
-    </ul>
   </section>
 
   <section class="featured">

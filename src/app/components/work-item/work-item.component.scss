@@ -1,0 +1,51 @@
+@import "../../shared/shared";
+
+:host {
+  @include column-centered();
+  width: 100%;
+}
+
+.icon-container {
+  width: toRem(58);
+  margin-bottom: toRem(32);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: $two-xl) {
+    margin-bottom: toRem(40);
+  }
+}
+
+.title {
+  font-family: var(--main-font);
+  font-size: toRem(18);
+  font-weight: 600;
+  line-height: toRem(21);
+  color: var(--black-100);
+  text-align: center;
+  margin-bottom: toRem(8);
+
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(20);
+    line-height: toRem(32);
+    margin-bottom: toRem(16);
+  }
+}
+
+.desc {
+  font-family: var(--main-font);
+  font-size: toRem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: toRem(21);
+  color: var(--black-80);
+  text-align: center;
+
+  @media screen and (min-width: $two-xl) {
+    font-size: toRem(16);
+    line-height: toRem(24);
+  }
+}
