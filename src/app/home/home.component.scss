@@ -367,20 +367,26 @@
   }
 
   .title {
-    font-size: toRem(14);
-    font-weight: 500;
-    line-height: 1.71;
-    margin-bottom: toRem(39);
+    font-size: toRem(24);
+    font-weight: 600;
+    line-height: toRem(29);
+    margin-bottom: toRem(48);
+    text-align: center;
+    color: var(--black-60);
+
+    .special {
+      color: var(--black-100);
+    }
 
     @media screen and (min-width: $md) {
-      font-size: toRem(20);
-      line-height: 1.2;
-      margin-bottom: toRem(102);
+      font-size: toRem(32);
+      line-height: toRem(42);
+      margin-bottom: toRem(64);
     }
     @media screen and (min-width: $xl) {
-      font-size: toRem(24);
-      line-height: 1;
-      margin-bottom: toRem(128);
+      font-size: toRem(48);
+      line-height: toRem(58);
+      margin-bottom: toRem(80);
     }
   }
 }
@@ -390,20 +396,22 @@
 .view-case__study-btn {
   @include centered();
   width: 100%;
-  font-size: toRem(16);
-  font-weight: bold;
-  line-height: 1.5;
-  color: var(--black-100);
-  padding: toRem(12) toRem(24);
+  font-size: toRem(14);
+  font-weight: 600;
+  line-height: toRem(21);
+  color: var(--white);
+  padding: toRem(14) toRem(40);
   border-radius: toRem(8);
   align-self: center;
 
   @media screen and (min-width: $md) {
-    padding: toRem(16) toRem(32);
+    font-size: toRem(16);
     width: auto;
+    padding: toRem(18) toRem(40);
   }
   @media screen and (min-width: $two-xl) {
-    padding: toRem(16) toRem(48);
+    font-size: toRem(18);
+    padding: toRem(24) toRem(40);
   }
   @include fade-hover(opacity, 300ms, 0.7);
 }

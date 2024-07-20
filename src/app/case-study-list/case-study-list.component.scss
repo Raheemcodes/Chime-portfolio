@@ -75,36 +75,38 @@
 
 .case-study__title {
   padding-top: toRem(16);
-  font-size: toRem(24);
-  font-weight: bold;
-  line-height: 1.58;
+  font-size: toRem(20);
+  font-weight: 600;
+  line-height: toRem(32);
+  color: var(--white);
 
   @media screen and (min-width: $xl) {
-    font-size: toRem(34);
-    line-height: 2.24;
+    font-size: toRem(24);
+    line-height: toRem(29);
   }
   @media screen and (min-width: $three-xl) {
-    font-size: toRem(52);
-    line-height: 1.46;
+    font-size: toRem(48);
+    line-height: toRem(58);
   }
 }
 
 .case-study__content {
-  font-size: toRem(16);
+  font-size: toRem(14);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: toRem(21);
+  color: var(--black-90);
 
   @media screen and (min-width: $md) {
     width: floor(calc(45700 / 1194)) * 1vw;
     max-width: toRem(461);
   }
   @media screen and (min-width: $xl) {
-    font-size: toRem(20);
-    line-height: 1.9;
+    font-size: toRem(16);
+    line-height: toRem(24);
   }
   @media screen and (min-width: $three-xl) {
-    font-size: toRem(26);
-    line-height: 1.46;
+    font-size: toRem(24);
+    line-height: toRem(36);
     width: floor(calc(65200 / 1728)) * 1vw;
     max-width: toRem(660);
   }
@@ -114,7 +116,7 @@
   list-style: none;
   @include display-flex();
   flex-wrap: wrap;
-  gap: toRem(16);
+  gap: toRem(18);
 
   @media screen and (min-width: $three-xl) {
     gap: toRem(24);
@@ -122,7 +124,7 @@
 }
 
 .area {
-  font-size: toRem(10);
+  font-size: toRem(8);
   font-weight: 400;
   color: var(--black-70);
   padding: toRem(12) toRem(24);
@@ -143,27 +145,23 @@
   @include column-flex();
   gap: toRem(24);
   align-self: flex-start;
-  color: var(--main-color);
+  color: var(--black-100);
 
   @media screen and (min-width: $xl) {
-    gap: toRem(32);
+    gap: toRem(40);
   }
-  @media screen and (min-width: $xl) {
+  @media screen and (min-width: $two-xl) {
     gap: toRem(42);
   }
 
   span {
-    font-size: toRem(16);
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: toRem(14);
+    font-weight: 600;
+    line-height: toRem(21);
 
     @media screen and (min-width: $xl) {
-      font-size: toRem(24);
-      line-height: 1;
-    }
-    @media screen and (min-width: $three-xl) {
-      font-size: toRem(28);
-      line-height: 0.86;
+      font-size: toRem(20);
+      line-height: toRem(24);
     }
   }
 
