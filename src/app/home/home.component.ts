@@ -35,6 +35,24 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  services: { image: string; title: string; desc: string }[] = [
+    {
+      image: '../../assets/icons/service.png',
+      title: 'Service Design',
+      desc: "Create services and procedures that satisfy your clients' needs by understanding their entire journeys.",
+    },
+    {
+      image: '../../assets/icons/uiux.png',
+      title: 'UI/UX Design',
+      desc: 'Design digital touch-points that are convenient to the user experience and the business.',
+    },
+    {
+      image: '../../assets/icons/design.png',
+      title: 'Design Systems',
+      desc: 'With a design system, you can assure scalability and unify your digital experience across services.',
+    },
+  ];
+
   constructor(public sharedService: SharedService) {}
 
   ngOnInit(): void {}

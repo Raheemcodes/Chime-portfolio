@@ -1,6 +1,7 @@
 <div class="icon-container">
   <img
-    src="../../../assets/icons/service.png"
+    loading="lazy"
+    [src]="service.image"
     alt="Service"
     width="78"
     height="78"
@@ -8,10 +9,9 @@
 </div>
 
 <div class="title-description">
-  <div class="title">Service Design</div>
+  <div class="title">{{ service.title }}</div>
 
   <p class="desc">
-    Create services and procedures that satisfy your clients' needs by
-    understanding their entire journeys.
+    {{ service.desc }}
   </p>
 </div>

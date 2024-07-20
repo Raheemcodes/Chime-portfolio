@@ -56,18 +56,37 @@
     >
       How <span class="special">I work</span>
     </div>
+
     <div class="work-overview">
       <ul class="work-list">
-        <li class="work-item">
-          <app-work-item></app-work-item>
+        <li
+          class="work-item"
+          aray-animate="fadeIn"
+          aray-delay="600ms"
+          aray-duration="500ms"
+          aray-offsetY="20%"
+        >
+          <app-work-item [service]="services[0]"></app-work-item>
         </li>
         <div class="vertical-line"></div>
-        <li class="work-item">
-          <app-work-item></app-work-item>
+        <li
+          class="work-item"
+          aray-animate="fadeIn"
+          aray-delay="900ms"
+          aray-duration="550ms"
+          aray-offsetY="30%"
+        >
+          <app-work-item [service]="services[1]"></app-work-item>
         </li>
         <div class="vertical-line"></div>
-        <li class="work-item">
-          <app-work-item></app-work-item>
+        <li
+          class="work-item"
+          aray-animate="fadeIn"
+          aray-delay="1.2s"
+          aray-duration="600ms"
+          aray-offsetY="40%"
+        >
+          <app-work-item [service]="services[2]"></app-work-item>
         </li>
       </ul>
     </div>

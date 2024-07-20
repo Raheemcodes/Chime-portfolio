@@ -186,7 +186,7 @@
   .work-list {
     list-style: none;
     width: 100%;
-    @include column-flex();
+    @include column-centered();
     gap: toRem(56);
 
     @media screen and (min-width: $md) {
