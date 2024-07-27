@@ -15,66 +15,70 @@
 .overview {
   width: 100%;
   @include column-centered();
-  gap: toRem(20);
+  gap: toRem(16);
   padding: toRem(32) toRem(16) toRem(56);
 
   @media screen and (min-width: $lg) {
     padding: toRem(64) toRem(80) toRem(150);
   }
   @media screen and (min-width: $two-xl) {
-    gap: toRem(28);
     padding: toRem(70) toRem(100) toRem(150);
   }
 
   .title {
     font-size: toRem(14);
-    font-weight: 500;
-    line-height: 1.71;
-    color: var(--black-90);
+    font-weight: 400;
+    line-height: toRem(21);
+    color: var(--black-70);
     text-align: center;
 
     @media screen and (min-width: $lg) {
       font-size: toRem(20);
-      line-height: 1.2;
+      line-height: toRem(30);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(24);
-      line-height: 1;
+      line-height: toRem(36);
     }
   }
 
   .sub-title {
     font-size: toRem(32);
-    font-weight: bold;
-    line-height: 0.75;
-    color: var(--black-100);
+    font-weight: 600;
+    line-height: toRem(42);
+    color: var(--black-60);
     text-align: center;
 
+    .special {
+      color: var(--black-100);
+    }
+
     @media screen and (min-width: $lg) {
-      font-size: toRem(68);
-      line-height: 1.12;
+      font-size: toRem(56);
+      line-height: toRem(72);
     }
     @media screen and (min-width: $two-xl) {
-      font-size: toRem(84);
-      line-height: 0.9;
+      font-size: toRem(72);
+      line-height: toRem(104);
     }
   }
 
   .desc {
-    font-size: toRem(16);
-    line-height: 1.5;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: toRem(21);
     text-align: center;
     max-width: toRem(342);
+    color: var(--black-80);
 
     @media screen and (min-width: $lg) {
-      font-size: toRem(24);
-      font-weight: 500;
-      line-height: 1.67;
+      font-size: toRem(20);
+      line-height: toRem(30);
       max-width: toRem(697);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(32);
-      line-height: 1.25;
+      line-height: toRem(48);
       max-width: toRem(876);
     }
   }

@@ -20,61 +20,49 @@
   margin-bottom: toRem(64);
 
   @media screen and (min-width: $lg) {
-    gap: toRem(40);
     padding: toRem(64) toRem(80) 0;
     margin-bottom: toRem(88);
   }
   @media screen and (min-width: $two-xl) {
-    gap: toRem(64);
     padding: toRem(70) toRem(100) 0;
     margin-bottom: toRem(128);
   }
 
-  .content {
-    width: 100%;
-    @include column-centered();
-    gap: toRem(20);
-
-    @media screen and (min-width: $two-xl) {
-      gap: toRem(28);
-    }
-  }
-
   .title {
     font-size: toRem(14);
-    font-weight: 500;
-    line-height: 1.71;
-    color: var(--black-90);
+    font-weight: 400;
+    line-height: toRem(21);
+    color: var(--black-70);
     text-align: center;
 
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $lg) {
       font-size: toRem(20);
-      line-height: 1.2;
+      line-height: toRem(30);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(24);
-      line-height: 1;
+      line-height: toRem(36);
     }
   }
 
   .sub-title {
     font-size: toRem(32);
-    font-weight: bold;
-    line-height: 1.5;
-    color: var(--black-100);
+    font-weight: 600;
+    line-height: toRem(42);
+    color: var(--black-60);
     text-align: center;
-    max-width: toRem(285);
+
+    .special {
+      color: var(--black-100);
+    }
 
     @media screen and (min-width: $lg) {
-      max-width: none;
-      width: toRem(636);
-      font-size: toRem(68);
-      line-height: 1.47;
+      font-size: toRem(56);
+      line-height: toRem(72);
     }
     @media screen and (min-width: $two-xl) {
-      width: toRem(774);
-      font-size: toRem(84);
-      line-height: 1.19;
+      font-size: toRem(72);
+      line-height: toRem(104);
     }
   }
 }
@@ -93,22 +81,25 @@
 
   p {
     font-size: toRem(18);
-    line-height: 1.5;
-    margin-bottom: toRem(24);
+    font-weight: 400;
+    line-height: toRem(21);
+    margin-bottom: toRem(21);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(28);
-      margin-bottom: toRem(48);
+      font-size: toRem(24);
+      line-height: toRem(32);
+      margin-bottom: toRem(32);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(40);
+      line-height: toRem(56);
       margin-bottom: toRem(64);
     }
 
     a {
       color: var(--main-blue);
       line-height: 1.5em;
-      border-bottom: 2px solid var(--main-blue);
+      border-bottom: toRem(2) solid var(--main-blue);
 
       @media (hover: hover) {
         @include transition(opacity, 100ms);

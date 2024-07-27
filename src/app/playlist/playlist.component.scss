@@ -32,9 +32,9 @@
 
   .title {
     font-size: toRem(14);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.71;
-    color: var(--black-90);
+    color: var(--black-70);
     text-align: center;
 
     @media screen and (min-width: $md) {
