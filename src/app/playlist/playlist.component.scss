@@ -15,12 +15,11 @@
 .overview {
   width: 100%;
   @include column-centered();
-  gap: toRem(20);
+  gap: toRem(16);
   padding: toRem(32) toRem(16) 0;
   margin-bottom: toRem(64);
 
   @media screen and (min-width: $lg) {
-    gap: toRem(16);
     padding: toRem(64) toRem(80) 0;
     margin-bottom: toRem(88);
   }
@@ -33,61 +32,55 @@
   .title {
     font-size: toRem(14);
     font-weight: 400;
-    line-height: 1.71;
-    color: var(--black-70);
+    line-height: toRem(21);
     text-align: center;
+    color: var(--black-80);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(16);
-      line-height: 1.2;
+      font-size: toRem(20);
+      line-height: toRem(30);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(24);
-      line-height: 1;
-      color: var(--black-70);
+      line-height: toRem(36);
     }
   }
 
   .desc {
-    font-size: toRem(16);
+    font-size: toRem(14);
     font-weight: 400;
-    line-height: toRem(24);
-    color: var(--black-90);
+    line-height: toRem(21);
     text-align: center;
+    max-width: toRem(400);
+    color: var(--black-80);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(24);
-      line-height: toRem(40);
-      font-weight: 500;
+      font-size: toRem(20);
+      line-height: toRem(30);
       max-width: toRem(697);
     }
     @media screen and (min-width: $two-xl) {
-      font-size: toRem(32);
-      font-weight: 400;
-      line-height: toRem(38);
-      color: var(--black-70);
-      max-width: toRem(874);
+      font-size: toRem(24);
+      line-height: toRem(36);
+      max-width: toRem(1237);
     }
   }
 
   .sub-title {
     font-size: toRem(32);
-    font-weight: bold;
-    line-height: 1.5;
-    color: var(--black-100);
+    font-style: normal;
+    font-weight: 600;
+    line-height: toRem(42);
     text-align: center;
-    max-width: toRem(285);
+    color: var(--black-100);
 
     @media screen and (min-width: $lg) {
-      max-width: none;
-      width: toRem(636);
-      font-size: toRem(68);
-      line-height: 1.47;
+      font-size: toRem(56);
+      line-height: toRem(72);
     }
     @media screen and (min-width: $two-xl) {
-      width: toRem(774);
-      font-size: toRem(84);
-      line-height: 1.19;
+      font-size: toRem(72);
+      line-height: toRem(104);
     }
   }
 }
@@ -106,17 +99,20 @@
 
   p {
     font-size: toRem(18);
+    font-style: normal;
     font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: toRem(24);
+    line-height: normal;
+    margin-bottom: toRem(18);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(28);
-      margin-bottom: toRem(48);
+      font-size: toRem(24);
+      line-height: toRem(32);
+      margin-bottom: toRem(toRem(32));
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(40);
-      margin-bottom: toRem(64);
+      line-height: toRem(56);
+      margin-bottom: toRem(56);
     }
   }
 }
@@ -158,39 +154,38 @@
 
   .title {
     font-size: toRem(14);
-    font-weight: 500;
-    line-height: 1.71;
-    color: var(--black-90);
+    font-weight: 400;
+    line-height: toRem(21);
     text-align: center;
+    color: var(--black-80);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(16);
-      line-height: 1.2;
+      font-size: toRem(20);
+      line-height: toRem(30);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(24);
-      line-height: 1;
-      color: var(--black-70);
+      line-height: toRem(36);
     }
   }
 
   .sub-title {
-    font-size: toRem(32);
-    font-weight: bold;
-    line-height: 1.5;
-    color: var(--black-100);
+    font-size: toRem(24);
+    font-weight: 600;
+    line-height: toRem(29);
     text-align: center;
-    max-width: toRem(285);
+    color: var(--black-100);
+    max-width: toRem(343);
 
     @media screen and (min-width: $lg) {
+      font-size: toRem(40);
+      line-height: toRem(48);
       max-width: none;
-      width: toRem(636);
-      font-size: toRem(68);
-      line-height: 1.47;
     }
     @media screen and (min-width: $two-xl) {
-      width: toRem(774);
-      font-size: toRem(84);
+      font-size: toRem(56);
+      font-weight: 700;
+      line-height: toRem(76);
       line-height: 1.19;
     }
   }
@@ -270,8 +265,8 @@
 
   .title {
     font-size: toRem(24);
-    font-weight: bold;
-    letter-spacing: normal;
+    font-weight: 600;
+    color: var(--white);
 
     @media screen and (min-width: $lg) {
       font-size: toRem(48);
@@ -279,18 +274,22 @@
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(64);
-      line-height: 1.19;
+      line-height: toRem(76);
     }
   }
 
   .desc {
     font-size: toRem(18);
+    font-weight: 400;
+    color: var(--white);
 
     @media screen and (min-width: $lg) {
-      font-size: toRem(28);
+      font-size: toRem(24);
+      line-height: toRem(36);
     }
     @media screen and (min-width: $two-xl) {
-      font-size: toRem(40);
+      font-size: toRem(32);
+      line-height: toRem(48);
     }
   }
 }
@@ -336,7 +335,7 @@
       position: relative;
       z-index: 1;
       width: 50%;
-      font-size: 16px;
+      font-size: toRem(16);
       font-weight: bold;
       gap: toRem(12);
       padding: toRem(24);
@@ -421,36 +420,40 @@ li.play {
   }
 
   .title {
-    font-size: toRem(20);
-    font-weight: bold;
-    line-height: 1;
+    font-size: toRem(18);
+    font-weight: 600;
+    line-height: toRem(21);
+    color: var(--white);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(40);
-      font-style: 500;
-      font-weight: 700;
-      line-height: 1;
+      font-size: toRem(32);
+      font-style: normal;
+      font-weight: 600;
+      line-height: toRem(42);
     }
     @media screen and (min-width: $two-xl) {
-      font-size: toRem(40);
-      font-weight: 700;
-      line-height: 1; /* 100% */
+      font-size: toRem(48);
+      font-style: normal;
+      font-weight: 600;
+      line-height: toRem(58);
     }
   }
 
   .artists-genre {
-    font-size: toRem(14);
-    line-height: 1;
+    font-size: toRem(12);
+    font-weight: 400;
+    line-height: toRem(14);
+    color: var(--white);
 
     @media screen and (min-width: $md) {
-      font-size: toRem(24);
-      font-weight: 400;
-      line-height: 1; /* 100% */
+      font-size: toRem(20);
+      line-height: toRem(30);
     }
     @media screen and (min-width: $two-xl) {
       font-size: toRem(24);
+      font-style: normal;
       font-weight: 400;
-      line-height: 1; /* 100% */
+      line-height: toRem(36);
     }
   }
 }
