@@ -110,36 +110,64 @@
       line-height: toRem(29);
       color: var(--black-100);
       flex-shrink: 0;
+      border: toRem(1) solid #0000;
+      border-radius: toRem(10);
+      transition: all 0.3s ease-out;
 
       @media (min-width: $two-xl) {
         font-size: toRem(24);
       }
 
       a {
+        @include centered();
+        gap: toRem(4);
         cursor: pointer;
         font-size: toRem(20);
         font-weight: 700;
         line-height: toRem(29);
         color: var(--black-100);
-      }
 
-      .border {
-        width: 0%;
-        transition: width 0.2s ease-out;
-        height: toRem(2);
-        background-color: var(--black-100);
-      }
+        .icon-container {
+          @include display-flex();
+          width: toRem(18);
+          height: toRem(18);
 
-      &.active,
-      &:hover {
-        .border {
-          width: 100%;
+          svg {
+            width: 100%;
+            height: auto;
+          }
         }
       }
 
-      &:active {
-        .border {
-          width: 50%;
+      &.active {
+        background: rgba(61, 61, 61, 0.48);
+        padding: toRem(12) toRem(18);
+        border: toRem(1) solid #414141;
+
+        &:hover {
+          background: rgba(61, 61, 61, 0.48);
+          padding: toRem(12) toRem(18);
+          border-radius: toRem(10);
+          border: toRem(1) solid #414141;
+        }
+
+        span {
+          background: linear-gradient(90deg, #3341ff 0%, #65d1ff 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover,
+        &:active {
+          span {
+            background: linear-gradient(90deg, #3341ff 0%, #65d1ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
         }
       }
     }
@@ -202,6 +230,9 @@
         color: var(--main-color);
 
         a {
+          @include display-flex();
+          gap: toRem(8);
+          align-items: center;
           width: 100%;
           cursor: pointer;
           font-weight: 700;
@@ -212,6 +243,17 @@
           @media (hover: hover) {
             &:hover {
               color: var(--blue-30);
+            }
+          }
+
+          .icon-container {
+            @include display-flex();
+            width: 24px;
+            height: 24px;
+
+            svg {
+              width: 100%;
+              height: auto;
             }
           }
         }
