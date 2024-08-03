@@ -8,9 +8,10 @@ import { FooterModule } from '../footer/footer.module';
 import { ResponseModule } from '../response/response.module';
 import { HomeComponent } from './home.component';
 import { WorkItemComponent } from '../components/work-item/work-item.component';
+import { BackgroundGridComponent } from './background-grid/background-grid.component';
 
 @NgModule({
-  declarations: [HomeComponent, WorkItemComponent],
+  declarations: [HomeComponent, WorkItemComponent, BackgroundGridComponent],
   imports: [
     CommonModule,
     CaseStudyListModule,

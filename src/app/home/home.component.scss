@@ -1,6 +1,7 @@
 @import "./../shared/shared";
 
 #home {
+  position: relative;
   padding: toRem(96) 0 0;
 
   @media screen and (min-width: $lg) {
