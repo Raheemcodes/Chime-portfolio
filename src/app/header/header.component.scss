@@ -127,6 +127,16 @@
         line-height: toRem(29);
         color: var(--black-100);
 
+        @media (hover: hover) {
+          &:hover,
+          &:active {
+            background: linear-gradient(90deg, #3341ff 0%, #65d1ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
         .icon-container {
           @include display-flex();
           width: toRem(18);
@@ -143,12 +153,13 @@
         background: rgba(61, 61, 61, 0.48);
         padding: toRem(12) toRem(18);
         border: toRem(1) solid #414141;
-
-        &:hover {
-          background: rgba(61, 61, 61, 0.48);
-          padding: toRem(12) toRem(18);
-          border-radius: toRem(10);
-          border: toRem(1) solid #414141;
+        @media (hover: hover) {
+          &:hover {
+            background: rgba(61, 61, 61, 0.48);
+            padding: toRem(12) toRem(18);
+            border-radius: toRem(10);
+            border: toRem(1) solid #414141;
+          }
         }
 
         span {

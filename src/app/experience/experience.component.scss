@@ -1,0 +1,87 @@
+@import "./../shared/shared";
+
+#experience {
+  width: 100%;
+  padding: toRem(69) 0 0;
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(104) 0 0;
+  }
+  @media screen and (min-width: $two-xl) {
+    padding: toRem(104) 0 0;
+  }
+}
+
+.overview {
+  width: 100%;
+  @include column-centered();
+  gap: toRem(16);
+  padding: toRem(32) toRem(16) 0;
+  margin-bottom: toRem(64);
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(64) toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    padding: toRem(70) toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+
+  .title {
+    font-size: toRem(32);
+    font-style: normal;
+    font-weight: 600;
+    line-height: toRem(42);
+    text-align: center;
+    color: var(--black-60);
+
+    @media screen and (min-width: $lg) {
+      font-size: toRem(56);
+      line-height: toRem(72);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(72);
+      line-height: toRem(104);
+    }
+
+    .special {
+      color: var(--black-100);
+    }
+  }
+  .sub-title {
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: toRem(21);
+    text-align: center;
+    color: var(--black-80);
+    max-width: toRem(550);
+
+    @media screen and (min-width: $md) {
+      font-size: toRem(20);
+      line-height: toRem(30);
+      max-width: toRem(697);
+    }
+    @media screen and (min-width: $two-xl) {
+      font-size: toRem(32);
+      line-height: toRem(48);
+      max-width: toRem(1237);
+    }
+  }
+}
+
+.cheffings {
+  padding: toRem(32) toRem(16) 0;
+  margin-bottom: toRem(64);
+
+  @media screen and (min-width: $lg) {
+    padding: toRem(64) toRem(80) 0;
+    margin-bottom: toRem(88);
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(28);
+    padding: toRem(70) toRem(100) 0;
+    margin-bottom: toRem(128);
+  }
+}

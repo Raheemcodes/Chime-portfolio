@@ -1,0 +1,34 @@
+@import "../../shared/shared";
+
+:host {
+  @include column-flex();
+  gap: 32px;
+  width: 100%;
+  background: #2e2e2e;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid #1f1f1f;
+}
+
+.img-container {
+  position: relative;
+  @include centered();
+  width: 100%;
+  height: auto;
+  aspect-ratio: calc(491 - 64) / 319;
+  border-radius: 20px;
+  border: 2px solid var(--black-30);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+.link {
+  position: absolute;
+}

@@ -31,6 +31,11 @@ const routes: Routes = [
       import('./backdoor/backdoor.module').then((m) => m.BackdoorModule),
   },
   {
+    path: 'experience',
+    loadChildren: () =>
+      import('./experience/experience.module').then((m) => m.ExperienceModule),
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
