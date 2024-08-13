@@ -312,4 +312,11 @@
   @media screen and (min-width: $two-xl) {
     gap: toRem(16);
   }
+
+  span {
+    display: flex;
+  }
+}
+
+.content {
 }

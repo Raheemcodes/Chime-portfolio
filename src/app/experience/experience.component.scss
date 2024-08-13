@@ -85,3 +85,22 @@
     margin-bottom: toRem(128);
   }
 }
+
+.cheffings-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: toRem(40);
+
+  @media screen and (min-width: $md) {
+    gap: toRem(56) toRem(32);
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: $lg) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (min-width: $two-xl) {
+    gap: toRem(64) toRem(48);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

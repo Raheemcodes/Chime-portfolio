@@ -8,7 +8,18 @@
   />
 
   <a class="link" href="https://www.chedda.finance/" target="_blank">
-    <span>View Product</span> <span class="icon-container"></span>
+    <span>View Product</span>
+    <span class="icon-container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="17"
+        height="16"
+        viewBox="0 0 17 16"
+        fill="none"
+      >
+        <path d="M6.5 4L10.5 8L6.5 12" stroke="white" stroke-width="2" />
+      </svg>
+    </span>
   </a>
 </div>
 
@@ -16,7 +27,7 @@
   <div class="title-status">
     <h2 class="title">Chedda Finance</h2>
 
-    <div [ngClass]="{ status: true, dev: true }">In-Dev</div>
+    <div [ngClass]="{ status: true, live: true }">In-Dev</div>
   </div>
 
   <div class="position-duration">
