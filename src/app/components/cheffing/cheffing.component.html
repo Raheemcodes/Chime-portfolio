@@ -3,11 +3,11 @@
     loading="lazy"
     width="256"
     height="256"
-    src="../../../assets/cheffings/chedda.png"
+    src="../../../assets/cheffings/{{ experience.image }}"
     alt="Chedda Finance"
   />
 
-  <a class="link" href="https://www.chedda.finance/" target="_blank">
+  <a class="link" [href]="experience.link" target="_blank">
     <span>View Product</span>
     <span class="icon-container">
       <svg
@@ -25,20 +25,24 @@
 
 <div class="content">
   <div class="title-status">
-    <h2 class="title">Chedda Finance</h2>
+    <h2 class="title">{{ experience.title }}</h2>
 
-    <div [ngClass]="{ status: true, live: true }">In-Dev</div>
+    <div [ngClass]="{ status: true, live: experience.live }">
+      {{ experience.live ? "Live" : "In-Dev" }}
+    </div>
   </div>
 
   <div class="position-duration">
-    <h3 class="position">Senior Product Designer</h3>
+    <h3 class="position">{{ experience.position }}</h3>
 
-    <h4 class="duration">Oct 2023 - Current</h4>
+    <h4 class="duration" *ngIf="experience.date">
+      {{ experience.date.from }}
+      - {{ experience.date.to ? experience.date.to : "Current" }}
+    </h4>
+    <h4 class="duration" *ngIf="!experience.date">Contract</h4>
   </div>
 
   <p class="desc">
-    Currently leading design initiatives, driving user-centric solutions for
-    financial products and managing the entire design process from concept to
-    execution.
+    {{ experience.desc }}
   </p>
 </div>
