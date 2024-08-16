@@ -44,7 +44,7 @@ export class ExperienceComponent implements OnInit {
       position: 'Product Designer',
       image: 'foundation.jpeg',
       link: 'https://foundation.app/',
-       date: {
+      date: {
         from: 'Feb 2022',
       },
       desc: 'I designed an aesthetically pleasing and intuitive user interfaces, as well as interactive prototypes, for a diverse range of mobile and web applications, enhancing user experiences and functionality.',
@@ -63,10 +63,10 @@ export class ExperienceComponent implements OnInit {
       position: 'Product Designer',
       image: 'deel.png',
       link: 'https://www.deel.com/',
-       date: {
+      date: {
         from: 'Jan 2021',
       },
-      desc: 'Led a comprehensive user research initiative, which informed the redesign of the company's flagship product and Elevated the performance of critical features at Deel.',
+      desc: "Led a comprehensive user research initiative, which informed the redesign of the company's flagship product and Elevated the performance of critical features at Deel.",
     },
     {
       title: 'Harborgate',
