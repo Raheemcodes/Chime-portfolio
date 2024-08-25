@@ -1,7 +1,13 @@
 @import "./../shared/shared";
 
+:host {
+  display: block;
+  height: 100%;
+}
+
 #home {
   position: relative;
+  height: 100%;
   padding: toRem(96) 0 0;
 
   @media screen and (min-width: $lg) {
@@ -316,7 +322,4 @@
   span {
     display: flex;
   }
-}
-
-.content {
 }
