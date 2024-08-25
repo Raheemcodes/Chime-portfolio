@@ -235,14 +235,23 @@
       list-style: none;
       gap: toRem(64 - 32);
 
+      @media (min-width: $lg) {
+        margin-top: 10%;
+      }
+
       .nav-item {
         width: 100%;
         cursor: pointer;
         font-weight: 700;
         font-size: toRem(32);
         line-height: toRem(29);
-        padding: toRem(16);
+        padding: toRem(20);
         color: var(--main-color);
+        padding: toRem(20);
+
+        @media (min-width: $lg) {
+          padding: toRem(20) toRem(80);
+        }
 
         a {
           @include display-flex();
